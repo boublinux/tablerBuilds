@@ -11,3 +11,8 @@ The main purpose of this repository is to store ready-to-use production builds (
 
 ## Download
 [https://github.com/boublinux/tablerBuilds/releases](https://github.com/boublinux/tablerBuilds/releases)
+
+---
+
+## Screenshots
+<img width="1920" height="798" alt="image" src="https://github.com/user-attachments/assets/e80f09ff-40ff-4d6b-b566-39e2d1650e1d" />
