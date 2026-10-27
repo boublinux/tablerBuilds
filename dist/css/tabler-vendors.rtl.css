@@ -1,5 +1,5 @@
 /*!
- * Tabler Vendors v1.7.0 (https://tabler.io)
+ * Tabler Vendors v1.7.1 (https://tabler.io)
  * Copyright 2018-2026 The Tabler Authors
  * Copyright 2018-2026 codecalm.net Paweł Kuna
  * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
@@ -66,15 +66,6 @@
 }
 
 .focus .ts-control {
-  outline-color: transparent;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, outline-color 0.15s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .focus .ts-control {
-    transition: none;
-  }
-}
-.focus .ts-control {
   --tblr-focus-ring-offset: -1px;
   box-shadow: var(--tblr-shadow-input);
   border-radius: var(--tblr-border-radius);
@@ -84,6 +75,13 @@
 
 .ts-control {
   color: inherit;
+  outline-color: transparent;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, outline-color 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ts-control {
+    transition: none;
+  }
 }
 .ts-control .dropdown-menu {
   width: 100%;
@@ -115,12 +113,20 @@
   outline-color: light-dark(color-mix(in oklab, var(--tblr-danger) calc(var(--tblr-focus-ring-opacity) * 100%), var(--tblr-body-bg)), color-mix(in oklab, var(--tblr-danger) calc(var(--tblr-focus-ring-opacity-dark) * 100%), var(--tblr-body-bg)));
 }
 
+.ts-wrapper.form-control,
+.ts-wrapper.form-select {
+  --tblr-form-control-mobile-font-size: var(--tblr-control-font-size);
+}
 .ts-wrapper.form-control .ts-control,
 .ts-wrapper.form-select .ts-control {
   padding: var(--tblr-control-padding-y) var(--tblr-control-padding-x);
   font-size: var(--tblr-control-font-size) !important;
   line-height: var(--tblr-control-line-height);
   border-radius: inherit !important;
+}
+.ts-wrapper.form-control:not(.input-group > *):not([class*=rounded]) .ts-control,
+.ts-wrapper.form-select:not(.input-group > *):not([class*=rounded]) .ts-control {
+  border-radius: max(0px, var(--tblr-control-border-radius) - var(--tblr-control-border-width)) !important;
 }
 .ts-wrapper.form-control.multi.has-items .ts-control,
 .ts-wrapper.form-select.multi.has-items .ts-control {
@@ -130,6 +136,12 @@
 
 .input-icon > .input-icon-addon ~ .ts-wrapper .ts-control {
   padding-inline-start: var(--tblr-input-icon-padding-start);
+}
+
+.input-group > .ts-hidden-accessible:first-child + .ts-wrapper {
+  margin-inline-start: 0 !important;
+  border-start-start-radius: var(--tblr-control-border-radius, var(--tblr-border-radius)) !important;
+  border-end-start-radius: var(--tblr-control-border-radius, var(--tblr-border-radius)) !important;
 }
 
 .ts-dropdown {
@@ -174,6 +186,10 @@
   color: var(--tblr-body-color);
   background: var(--tblr-bg-surface-secondary);
   border: 1px solid var(--tblr-border-color);
+}
+
+.ts-wrapper.plugin-remove_button .item:not(.active) .remove {
+  border-color: var(--tblr-border-color) !important;
 }
 
 .ts-wrapper.disabled .ts-control {

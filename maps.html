@@ -2188,351 +2188,353 @@
       <!-- END NAVBAR  -->
 
       <div class="page-wrapper">
-        <!-- BEGIN PAGE HEADER -->
+        <main id="content" class="d-flex flex-column flex-fill">
+          <!-- BEGIN PAGE HEADER -->
 
-        <div class="page-header d-print-none">
-          <div class="container-xl">
-            <div class="row g-2 align-items-center">
-              <div class="col">
-                <h1 class="page-title">Maps</h1>
+          <div class="page-header d-print-none">
+            <div class="container-xl">
+              <div class="row g-2 align-items-center">
+                <div class="col">
+                  <h1 class="page-title">Maps</h1>
 
-                <div class="text-secondary mt-1">Interactive MapLibre maps — plain, styled, with custom markers and popups.</div>
-              </div>
+                  <div class="text-secondary mt-1">Interactive MapLibre maps — plain, styled, with custom markers and popups.</div>
+                </div>
 
-              <div class="col-auto ms-auto d-print-none">
-                <a href="https://docs.tabler.io/ui/components/map" target="_blank" rel="noopener" class="link-secondary">
-                  Docs
-                  <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
-                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                    <path d="M11 13l9 -9" />
-                    <path d="M15 4h5v5" />
-                  </svg>
-                </a>
+                <div class="col-auto ms-auto d-print-none">
+                  <a href="https://docs.tabler.io/ui/components/map" target="_blank" rel="noopener" class="link-secondary">
+                    Docs
+                    <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
+                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                      <path d="M11 13l9 -9" />
+                      <path d="M15 4h5v5" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- END PAGE HEADER -->
+          <!-- END PAGE HEADER -->
 
-        <!-- BEGIN PAGE BODY -->
-        <main id="content" class="page-body">
-          <div class="container-xl">
-            <div class="row row-cards">
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Simple map</h2>
-                    <div class="ratio ratio-16x9">
+          <!-- BEGIN PAGE BODY -->
+          <div class="page-body">
+            <div class="container-xl">
+              <div class="row row-cards">
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Simple map</h2>
+                      <div class="ratio ratio-16x9">
+                        <div>
+                          <div id="map-simple" class="w-100 h-100 rounded" role="region" aria-label="Simple map" data-bs-toggle="map" data-bs-center="13.4049,52.518827" data-bs-zoom="13" data-bs-controls="true"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Street map style</h2>
+                      <div class="ratio ratio-16x9">
+                        <div>
+                          <div id="map-light" class="w-100 h-100 rounded" role="region" aria-label="Street map style" data-bs-toggle="map" data-bs-center="-0.2416782,51.5285582" data-bs-zoom="11" data-bs-map-style="liberty"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="ratio ratio-21x9">
                       <div>
-                        <div id="map-simple" class="w-100 h-100 rounded" role="region" aria-label="Simple map" data-bs-toggle="map" data-bs-center="13.4049,52.518827" data-bs-zoom="13" data-bs-controls="true"></div>
+                        <div id="map-markers" class="w-100 h-100 rounded" role="region" aria-label="Map with markers" data-bs-toggle="map" data-bs-center="0,0" data-bs-zoom="1" data-bs-map-style="positron">
+                          <span class="map-marker map-marker-dot" data-bs-lng="-58.666667" data-bs-lat="-34.58333333" data-bs-popup="Buenos Aires"></span><span class="map-marker map-marker-dot" data-bs-lng="16.366667" data-bs-lat="48.2" data-bs-popup="Vienna"></span
+                          ><span class="map-marker map-marker-dot" data-bs-lng="116.383333" data-bs-lat="39.91666667" data-bs-popup="Beijing"></span><span class="map-marker map-marker-dot" data-bs-lng="149.133333" data-bs-lat="-35.26666667" data-bs-popup="Canberra"></span
+                          ><span class="map-marker map-marker-dot" data-bs-lng="58.583333" data-bs-lat="23.61666667" data-bs-popup="Muscat"></span><span class="map-marker map-marker-dot" data-bs-lng="-77" data-bs-lat="38.883333" data-bs-popup="Washington"></span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Street map style</h2>
-                    <div class="ratio ratio-16x9">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="ratio ratio-21x9">
                       <div>
-                        <div id="map-light" class="w-100 h-100 rounded" role="region" aria-label="Street map style" data-bs-toggle="map" data-bs-center="-0.2416782,51.5285582" data-bs-zoom="11" data-bs-map-style="liberty"></div>
+                        <div id="map-card" class="w-100 h-100 rounded" role="region" aria-label="Full-card map" data-bs-toggle="map" data-bs-center="0,0" data-bs-zoom="1" data-bs-map-style="bright" data-bs-map-style-dark="fiord"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="ratio ratio-21x9">
-                    <div>
-                      <div id="map-markers" class="w-100 h-100 rounded" role="region" aria-label="Map with markers" data-bs-toggle="map" data-bs-center="0,0" data-bs-zoom="1" data-bs-map-style="positron">
-                        <span class="map-marker map-marker-dot" data-bs-lng="-58.666667" data-bs-lat="-34.58333333" data-bs-popup="Buenos Aires"></span><span class="map-marker map-marker-dot" data-bs-lng="16.366667" data-bs-lat="48.2" data-bs-popup="Vienna"></span
-                        ><span class="map-marker map-marker-dot" data-bs-lng="116.383333" data-bs-lat="39.91666667" data-bs-popup="Beijing"></span><span class="map-marker map-marker-dot" data-bs-lng="149.133333" data-bs-lat="-35.26666667" data-bs-popup="Canberra"></span
-                        ><span class="map-marker map-marker-dot" data-bs-lng="58.583333" data-bs-lat="23.61666667" data-bs-popup="Muscat"></span><span class="map-marker map-marker-dot" data-bs-lng="-77" data-bs-lat="38.883333" data-bs-popup="Washington"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="ratio ratio-21x9">
-                    <div>
-                      <div id="map-card" class="w-100 h-100 rounded" role="region" aria-label="Full-card map" data-bs-toggle="map" data-bs-center="0,0" data-bs-zoom="1" data-bs-map-style="bright" data-bs-map-style-dark="fiord"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Marker styles</h2>
-                    <p class="card-subtitle">Draw markers in HTML with <code>.map-marker</code>: a dot, a circle with an icon or a count, a pin, or an avatar. Add <code>.map-marker-label</code> for a short text, and <code>.map-marker-pulse</code> for a live position.</p>
-                    <div class="ratio ratio-4x3">
-                      <div>
-                        <div id="map-marker-styles" class="w-100 h-100 rounded" role="region" aria-label="Marker styles" data-bs-toggle="map" data-bs-center="13.405,52.522" data-bs-zoom="11">
-                          <span class="map-marker map-marker-dot" data-bs-lng="13.345" data-bs-lat="52.54"></span>
-                          <span class="map-marker map-marker-dot map-marker-red" data-bs-lng="13.39" data-bs-lat="52.545"></span>
-                          <span class="map-marker" data-bs-lng="13.445" data-bs-lat="52.538"
-                            ><!-- Download SVG icon from http://tabler.io/icons/icon/building-store -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M3 21l18 0" />
-                              <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" />
-                              <path d="M5 21l0 -10.15" />
-                              <path d="M19 21l0 -10.15" />
-                              <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" /></svg
-                            ><span class="map-marker-label">Store</span></span
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Marker styles</h2>
+                      <p class="card-subtitle">Draw markers in HTML with <code>.map-marker</code>: a dot, a circle with an icon or a count, a pin, or an avatar. Add <code>.map-marker-label</code> for a short text, and <code>.map-marker-pulse</code> for a live position.</p>
+                      <div class="ratio ratio-4x3">
+                        <div>
+                          <div id="map-marker-styles" class="w-100 h-100 rounded" role="region" aria-label="Marker styles" data-bs-toggle="map" data-bs-center="13.405,52.522" data-bs-zoom="11">
+                            <span class="map-marker map-marker-dot" data-bs-lng="13.345" data-bs-lat="52.54"></span>
+                            <span class="map-marker map-marker-dot map-marker-red" data-bs-lng="13.39" data-bs-lat="52.545"></span>
+                            <span class="map-marker" data-bs-lng="13.445" data-bs-lat="52.538"
+                              ><!-- Download SVG icon from http://tabler.io/icons/icon/building-store -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M3 21l18 0" />
+                                <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" />
+                                <path d="M5 21l0 -10.15" />
+                                <path d="M19 21l0 -10.15" />
+                                <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" /></svg
+                              ><span class="map-marker-label">Store</span></span
+                            >
+                            <span class="map-marker map-marker-green" data-bs-lng="13.35" data-bs-lat="52.512">12</span>
+                            <span class="map-marker map-marker-dot map-marker-green map-marker-pulse" data-bs-lng="13.375" data-bs-lat="52.535"></span>
+                            <span class="map-marker map-marker-pin" data-bs-lng="13.405" data-bs-lat="52.52" data-bs-anchor="bottom"
+                              ><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg
+                            ></span>
+                            <span class="map-marker map-marker-pin map-marker-red" data-bs-lng="13.47" data-bs-lat="52.518" data-bs-anchor="bottom"
+                              ><!-- Download SVG icon from http://tabler.io/icons/icon/star -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245" /></svg
+                            ></span>
+                            <span class="map-marker" data-bs-lng="13.43" data-bs-lat="52.503"><span style="background-image: url(././static/avatars/000m.jpg)" class="avatar avatar-sm"></span></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Popup card</h2>
+                      <p class="card-subtitle">Put the popup content in a <code>&lt;template&gt;</code> inside the marker. <code>.map-popup-card</code> makes room for an image.</p>
+                      <div class="ratio ratio-4x3">
+                        <div>
+                          <div id="map-popup-card" class="w-100 h-100 rounded" role="region" aria-label="Popup card" data-bs-toggle="map" data-bs-center="13.4,52.546" data-bs-zoom="11">
+                            <span class="map-marker map-marker-pin" data-bs-lng="13.4019" data-bs-lat="52.5169" data-bs-anchor="bottom" data-bs-popup-open="true">
+                              <!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
+                              </svg>
+                              <template class="map-popup-card" data-bs-close-button="true">
+                                <div class="img-responsive img-responsive-21x9" style="background-image: url(./static/photos/a-visit-to-the-bookstore.jpg)"></div>
+                                <div class="p-3">
+                                  <div class="fw-medium">Museum Island</div>
+                                  <div class="text-secondary mb-3">Five museums on the Spree, open daily.</div>
+                                  <a href="#" class="btn btn-primary btn-sm"> View details </a>
+                                </div>
+                              </template> </span
+                            ><span class="map-marker map-marker-pin" data-bs-lng="13.3531" data-bs-lat="52.5176" data-bs-anchor="bottom">
+                              <!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
+                              </svg>
+                              <template class="map-popup-card" data-bs-close-button="true">
+                                <div class="img-responsive img-responsive-21x9" style="background-image: url(./static/photos/book-on-the-grass.jpg)"></div>
+                                <div class="p-3">
+                                  <div class="fw-medium">Bellevue Palace</div>
+                                  <div class="text-secondary mb-3">Residence by the Tiergarten park.</div>
+                                  <a href="#" class="btn btn-primary btn-sm"> View details </a>
+                                </div>
+                              </template> </span
+                            ><span class="map-marker map-marker-pin" data-bs-lng="13.4633" data-bs-lat="52.5546" data-bs-anchor="bottom">
+                              <!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
+                              </svg>
+                              <template class="map-popup-card" data-bs-close-button="true">
+                                <div class="img-responsive img-responsive-21x9" style="background-image: url(./static/photos/brainstorming-session-with-creative-designers.jpg)"></div>
+                                <div class="p-3">
+                                  <div class="fw-medium">Weissensee</div>
+                                  <div class="text-secondary mb-3">A lake with a beach in the north-east.</div>
+                                  <a href="#" class="btn btn-primary btn-sm"> View details </a>
+                                </div>
+                              </template>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Route</h2>
+                      <p class="card-subtitle">Draw a path with <code>data-bs-route</code>, a list of points, and mark its ends with markers.</p>
+                      <div class="ratio ratio-16x9">
+                        <div>
+                          <div
+                            id="map-route"
+                            class="w-100 h-100 rounded"
+                            role="region"
+                            aria-label="Route"
+                            data-bs-toggle="map"
+                            data-bs-center="13.4046,52.513"
+                            data-bs-zoom="11.6"
+                            data-bs-route="[[13.3695,52.5251],[13.3777,52.5208],[13.388,52.5186],[13.3989,52.5176],[13.405,52.5192],[13.4132,52.5219],[13.4215,52.5165],[13.43,52.5105],[13.4397,52.505]]"
                           >
-                          <span class="map-marker map-marker-green" data-bs-lng="13.35" data-bs-lat="52.512">12</span>
-                          <span class="map-marker map-marker-dot map-marker-green map-marker-pulse" data-bs-lng="13.375" data-bs-lat="52.535"></span>
-                          <span class="map-marker map-marker-pin" data-bs-lng="13.405" data-bs-lat="52.52" data-bs-anchor="bottom"
-                            ><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                              <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg
-                          ></span>
-                          <span class="map-marker map-marker-pin map-marker-red" data-bs-lng="13.47" data-bs-lat="52.518" data-bs-anchor="bottom"
-                            ><!-- Download SVG icon from http://tabler.io/icons/icon/star -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245" /></svg
-                          ></span>
-                          <span class="map-marker" data-bs-lng="13.43" data-bs-lat="52.503"><span style="background-image: url(././static/avatars/000m.jpg)" class="avatar avatar-sm"></span></span>
+                            <span class="map-marker map-marker-dot" data-bs-lng="13.3695" data-bs-lat="52.5251"></span>
+                            <span class="map-marker map-marker-pin" data-bs-lng="13.4397" data-bs-lat="52.505" data-bs-anchor="bottom"
+                              ><!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></svg
+                            ></span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Popup card</h2>
-                    <p class="card-subtitle">Put the popup content in a <code>&lt;template&gt;</code> inside the marker. <code>.map-popup-card</code> makes room for an image.</p>
-                    <div class="ratio ratio-4x3">
-                      <div>
-                        <div id="map-popup-card" class="w-100 h-100 rounded" role="region" aria-label="Popup card" data-bs-toggle="map" data-bs-center="13.4,52.546" data-bs-zoom="11">
-                          <span class="map-marker map-marker-pin" data-bs-lng="13.4019" data-bs-lat="52.5169" data-bs-anchor="bottom" data-bs-popup-open="true">
-                            <!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
-                            </svg>
-                            <template class="map-popup-card" data-bs-close-button="true">
-                              <div class="img-responsive img-responsive-21x9" style="background-image: url(./static/photos/a-visit-to-the-bookstore.jpg)"></div>
-                              <div class="p-3">
-                                <div class="fw-medium">Museum Island</div>
-                                <div class="text-secondary mb-3">Five museums on the Spree, open daily.</div>
-                                <a href="#" class="btn btn-primary btn-sm"> View details </a>
-                              </div>
-                            </template> </span
-                          ><span class="map-marker map-marker-pin" data-bs-lng="13.3531" data-bs-lat="52.5176" data-bs-anchor="bottom">
-                            <!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
-                            </svg>
-                            <template class="map-popup-card" data-bs-close-button="true">
-                              <div class="img-responsive img-responsive-21x9" style="background-image: url(./static/photos/book-on-the-grass.jpg)"></div>
-                              <div class="p-3">
-                                <div class="fw-medium">Bellevue Palace</div>
-                                <div class="text-secondary mb-3">Residence by the Tiergarten park.</div>
-                                <a href="#" class="btn btn-primary btn-sm"> View details </a>
-                              </div>
-                            </template> </span
-                          ><span class="map-marker map-marker-pin" data-bs-lng="13.4633" data-bs-lat="52.5546" data-bs-anchor="bottom">
-                            <!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
-                            </svg>
-                            <template class="map-popup-card" data-bs-close-button="true">
-                              <div class="img-responsive img-responsive-21x9" style="background-image: url(./static/photos/brainstorming-session-with-creative-designers.jpg)"></div>
-                              <div class="p-3">
-                                <div class="fw-medium">Weissensee</div>
-                                <div class="text-secondary mb-3">A lake with a beach in the north-east.</div>
-                                <a href="#" class="btn btn-primary btn-sm"> View details </a>
-                              </div>
-                            </template>
-                          </span>
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Area</h2>
+                      <p class="card-subtitle">Show a zone, a line or points with <code>data-bs-geojson</code>: a GeoJSON object, or the URL of a file.</p>
+                      <div class="ratio ratio-16x9">
+                        <div>
+                          <div
+                            id="map-area"
+                            class="w-100 h-100 rounded"
+                            role="region"
+                            aria-label="Area"
+                            data-bs-toggle="map"
+                            data-bs-center="13.405,52.519"
+                            data-bs-zoom="11"
+                            data-bs-geojson='{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[13.37,52.53],[13.42,52.535],[13.445,52.52],[13.43,52.505],[13.385,52.503],[13.365,52.515],[13.37,52.53]]]}}'
+                          ></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Route</h2>
-                    <p class="card-subtitle">Draw a path with <code>data-bs-route</code>, a list of points, and mark its ends with markers.</p>
-                    <div class="ratio ratio-16x9">
-                      <div>
-                        <div
-                          id="map-route"
-                          class="w-100 h-100 rounded"
-                          role="region"
-                          aria-label="Route"
-                          data-bs-toggle="map"
-                          data-bs-center="13.4046,52.513"
-                          data-bs-zoom="11.6"
-                          data-bs-route="[[13.3695,52.5251],[13.3777,52.5208],[13.388,52.5186],[13.3989,52.5176],[13.405,52.5192],[13.4132,52.5219],[13.4215,52.5165],[13.43,52.5105],[13.4397,52.505]]"
-                        >
-                          <span class="map-marker map-marker-dot" data-bs-lng="13.3695" data-bs-lat="52.5251"></span>
-                          <span class="map-marker map-marker-pin" data-bs-lng="13.4397" data-bs-lat="52.505" data-bs-anchor="bottom"
-                            ><!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></svg
-                          ></span>
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Shapes from a file</h2>
+                      <p class="card-subtitle">Point <code>data-bs-geojson</code> at a GeoJSON file to draw its areas, lines and points. <code>data-bs-layer-color</code> sets their color, and <code>data-bs-labels</code> names the buttons.</p>
+                      <div class="ratio ratio-21x9">
+                        <div>
+                          <div
+                            id="map-geojson-file"
+                            class="w-100 h-100 rounded"
+                            role="region"
+                            aria-label="Shapes from a file"
+                            data-bs-toggle="map"
+                            data-bs-center="13.39,52.5135"
+                            data-bs-zoom="12.2"
+                            data-bs-controls="true"
+                            data-bs-layer-color="--tblr-green"
+                            data-bs-labels='{"zoom-in":"Closer","zoom-out":"Farther"}'
+                            data-bs-geojson="./static/maps/berlin-places.geojson"
+                          ></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Area</h2>
-                    <p class="card-subtitle">Show a zone, a line or points with <code>data-bs-geojson</code>: a GeoJSON object, or the URL of a file.</p>
-                    <div class="ratio ratio-16x9">
-                      <div>
-                        <div
-                          id="map-area"
-                          class="w-100 h-100 rounded"
-                          role="region"
-                          aria-label="Area"
-                          data-bs-toggle="map"
-                          data-bs-center="13.405,52.519"
-                          data-bs-zoom="11"
-                          data-bs-geojson='{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[13.37,52.53],[13.42,52.535],[13.445,52.52],[13.43,52.505],[13.385,52.503],[13.365,52.515],[13.37,52.53]]]}}'
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Shapes from a file</h2>
-                    <p class="card-subtitle">Point <code>data-bs-geojson</code> at a GeoJSON file to draw its areas, lines and points. <code>data-bs-layer-color</code> sets their color, and <code>data-bs-labels</code> names the buttons.</p>
-                    <div class="ratio ratio-21x9">
-                      <div>
-                        <div
-                          id="map-geojson-file"
-                          class="w-100 h-100 rounded"
-                          role="region"
-                          aria-label="Shapes from a file"
-                          data-bs-toggle="map"
-                          data-bs-center="13.39,52.5135"
-                          data-bs-zoom="12.2"
-                          data-bs-controls="true"
-                          data-bs-layer-color="--tblr-green"
-                          data-bs-labels='{"zoom-in":"Closer","zoom-out":"Farther"}'
-                          data-bs-geojson="./static/maps/berlin-places.geojson"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Clusters</h2>
-                    <p class="card-subtitle">Group many points into clusters that split as you zoom in. Click a cluster to zoom to it.</p>
-                    <div class="ratio ratio-16x9">
-                      <div>
-                        <div id="map-clusters" class="w-100 h-100 rounded" role="region" aria-label="Clusters" data-bs-toggle="map" data-bs-center="9,48.5" data-bs-zoom="3" data-bs-controls="zoom,fullscreen"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">City switcher</h2>
-                    <p class="card-subtitle">Put buttons over the map and move it to a place with <code>flyTo</code>.</p>
-                    <div class="ratio ratio-16x9">
-                      <div>
-                        <div id="map-cities" class="w-100 h-100 rounded" role="region" aria-label="City switcher" data-bs-toggle="map" data-bs-center="13.405,52.52" data-bs-zoom="10"></div>
-                        <div class="btn-list position-absolute top-0 start-0 w-auto h-auto m-2" role="group" aria-label="City" id="map-cities-switcher">
-                          <button type="button" class="btn btn-sm btn-pill btn-primary" aria-pressed="true" data-lng="13.405" data-lat="52.52">Berlin</button><button type="button" class="btn btn-sm btn-pill" aria-pressed="false" data-lng="-0.1276" data-lat="51.5072">London</button
-                          ><button type="button" class="btn btn-sm btn-pill" aria-pressed="false" data-lng="-74.006" data-lat="40.7128">New York</button><button type="button" class="btn btn-sm btn-pill" aria-pressed="false" data-lng="139.6917" data-lat="35.6895">Tokyo</button>
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Clusters</h2>
+                      <p class="card-subtitle">Group many points into clusters that split as you zoom in. Click a cluster to zoom to it.</p>
+                      <div class="ratio ratio-16x9">
+                        <div>
+                          <div id="map-clusters" class="w-100 h-100 rounded" role="region" aria-label="Clusters" data-bs-toggle="map" data-bs-center="9,48.5" data-bs-zoom="3" data-bs-controls="zoom,fullscreen"></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Bubble map</h2>
-                    <p class="card-subtitle">Size circles by a value, for example users per city. Hover a circle to see the number.</p>
-                    <div class="ratio ratio-21x9">
-                      <div>
-                        <div id="map-bubbles" class="w-100 h-100 rounded" role="region" aria-label="Bubble map" data-bs-toggle="map" data-bs-center="20,20" data-bs-zoom="1"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Globe</h2>
-                    <p class="card-subtitle">Show the map as a 3D globe with <code>data-bs-globe="true"</code>, and connect places with arcs.</p>
-                    <div class="ratio ratio-4x3">
-                      <div>
-                        <div id="map-globe" class="w-100 h-100 rounded" role="region" aria-label="Globe" data-bs-toggle="map" data-bs-center="62,32" data-bs-zoom="1.3" data-bs-globe="true">
-                          <span class="map-marker map-marker-dot" data-bs-lng="-0.1276" data-bs-lat="51.5072">
-                            <span class="map-marker-label">London</span>
-                          </span>
-                          <span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="139.6917" data-bs-lat="35.6895">
-                            <span class="map-marker-label">Tokyo</span> </span
-                          ><span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="72.8777" data-bs-lat="19.076">
-                            <span class="map-marker-label">Mumbai</span> </span
-                          ><span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="103.8198" data-bs-lat="1.3521">
-                            <span class="map-marker-label">Singapore</span> </span
-                          ><span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="36.8219" data-bs-lat="-1.2921">
-                            <span class="map-marker-label">Nairobi</span>
-                          </span>
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">City switcher</h2>
+                      <p class="card-subtitle">Put buttons over the map and move it to a place with <code>flyTo</code>.</p>
+                      <div class="ratio ratio-16x9">
+                        <div>
+                          <div id="map-cities" class="w-100 h-100 rounded" role="region" aria-label="City switcher" data-bs-toggle="map" data-bs-center="13.405,52.52" data-bs-zoom="10"></div>
+                          <div class="btn-list position-absolute top-0 start-0 w-auto h-auto m-2" role="group" aria-label="City" id="map-cities-switcher">
+                            <button type="button" class="btn btn-sm btn-pill btn-primary" aria-pressed="true" data-lng="13.405" data-lat="52.52">Berlin</button><button type="button" class="btn btn-sm btn-pill" aria-pressed="false" data-lng="-0.1276" data-lat="51.5072">London</button
+                            ><button type="button" class="btn btn-sm btn-pill" aria-pressed="false" data-lng="-74.006" data-lat="40.7128">New York</button><button type="button" class="btn btn-sm btn-pill" aria-pressed="false" data-lng="139.6917" data-lat="35.6895">Tokyo</button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Draggable marker</h2>
-                    <p class="card-subtitle">Add <code>data-bs-draggable="true"</code> to let people move a marker, for example to pick an address.</p>
-                    <div class="ratio ratio-4x3">
-                      <div>
-                        <div id="map-draggable" class="w-100 h-100 rounded" role="region" aria-label="Draggable marker" data-bs-toggle="map" data-bs-center="13.405,52.52" data-bs-zoom="12">
-                          <span class="map-marker map-marker-pin" data-bs-lng="13.405" data-bs-lat="52.52" data-bs-anchor="bottom" data-bs-draggable="true"
-                            ><!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></svg
-                          ></span>
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Bubble map</h2>
+                      <p class="card-subtitle">Size circles by a value, for example users per city. Hover a circle to see the number.</p>
+                      <div class="ratio ratio-21x9">
+                        <div>
+                          <div id="map-bubbles" class="w-100 h-100 rounded" role="region" aria-label="Bubble map" data-bs-toggle="map" data-bs-center="20,20" data-bs-zoom="1"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Globe</h2>
+                      <p class="card-subtitle">Show the map as a 3D globe with <code>data-bs-globe="true"</code>, and connect places with arcs.</p>
+                      <div class="ratio ratio-4x3">
+                        <div>
+                          <div id="map-globe" class="w-100 h-100 rounded" role="region" aria-label="Globe" data-bs-toggle="map" data-bs-center="62,32" data-bs-zoom="1.3" data-bs-globe="true">
+                            <span class="map-marker map-marker-dot" data-bs-lng="-0.1276" data-bs-lat="51.5072">
+                              <span class="map-marker-label">London</span>
+                            </span>
+                            <span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="139.6917" data-bs-lat="35.6895">
+                              <span class="map-marker-label">Tokyo</span> </span
+                            ><span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="72.8777" data-bs-lat="19.076">
+                              <span class="map-marker-label">Mumbai</span> </span
+                            ><span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="103.8198" data-bs-lat="1.3521">
+                              <span class="map-marker-label">Singapore</span> </span
+                            ><span class="map-marker map-marker-dot" style="--tblr-map-marker-size: 0.625rem" data-bs-lng="36.8219" data-bs-lat="-1.2921">
+                              <span class="map-marker-label">Nairobi</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Draggable marker</h2>
+                      <p class="card-subtitle">Add <code>data-bs-draggable="true"</code> to let people move a marker, for example to pick an address.</p>
+                      <div class="ratio ratio-4x3">
+                        <div>
+                          <div id="map-draggable" class="w-100 h-100 rounded" role="region" aria-label="Draggable marker" data-bs-toggle="map" data-bs-center="13.405,52.52" data-bs-zoom="12">
+                            <span class="map-marker map-marker-pin" data-bs-lng="13.405" data-bs-lat="52.52" data-bs-anchor="bottom" data-bs-draggable="true"
+                              ><!-- Download SVG icon from http://tabler.io/icons/icon/map-pin -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></svg
+                            ></span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2541,8 +2543,8 @@
               </div>
             </div>
           </div>
+          <!-- END PAGE BODY -->
         </main>
-        <!-- END PAGE BODY -->
 
         <!-- BEGIN FOOTER -->
         <!--  BEGIN FOOTER  -->
@@ -2580,7 +2582,7 @@
                     <a href="." class="link-secondary">Tabler</a>. All rights reserved.
                   </li>
                   <li class="list-inline-item">
-                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.0 </a>
+                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.1 </a>
                   </li>
                 </ul>
               </div>

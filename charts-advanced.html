@@ -2184,145 +2184,147 @@
       <!-- END NAVBAR  -->
 
       <div class="page-wrapper">
-        <!-- BEGIN PAGE HEADER -->
+        <main id="content" class="d-flex flex-column flex-fill">
+          <!-- BEGIN PAGE HEADER -->
 
-        <div class="page-header d-print-none">
-          <div class="container-xl">
-            <div class="row g-2 align-items-center">
-              <div class="col">
-                <h1 class="page-title">Charts advanced</h1>
+          <div class="page-header d-print-none">
+            <div class="container-xl">
+              <div class="row g-2 align-items-center">
+                <div class="col">
+                  <h1 class="page-title">Charts advanced</h1>
 
-                <div class="text-secondary mt-1">Charts that go past a single series: two scales in one plot, threshold and marker lines, a brush to zoom with, and a group of charts that move together.</div>
-              </div>
-
-              <div class="col-auto ms-auto d-print-none">
-                <a href="https://docs.tabler.io/ui/plugins/chart" target="_blank" rel="noopener" class="link-secondary">
-                  Docs
-                  <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
-                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                    <path d="M11 13l9 -9" />
-                    <path d="M15 4h5v5" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END PAGE HEADER -->
-
-        <!-- BEGIN PAGE BODY -->
-        <main id="content" class="page-body">
-          <div class="container-xl">
-            <div class="row row-cards">
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Two y-axes</h2>
-                    <p class="card-subtitle">Plot values with different units together. Bind each axis to a series with the <code>yaxis.seriesName</code> chart option and move the second one to the right with <code>opposite</code>.</p>
-
-                    <div id="chart-revenue-vs-orders" class="position-relative" role="img" aria-label="Revenue in dollars and order count per month"></div>
-                    <style>
-                      :root {
-                        --chart-revenue-vs-orders-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-revenue-vs-orders-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-                  </div>
+                  <div class="text-secondary mt-1">Charts that go past a single series: two scales in one plot, threshold and marker lines, a brush to zoom with, and a group of charts that move together.</div>
                 </div>
-              </div>
 
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Threshold line</h2>
-                    <p class="card-subtitle">Draw a target or a limit across the plot with <code>annotations.yaxis</code>, so a reader sees at a glance which points miss it.</p>
-
-                    <div id="chart-uptime-sla" class="position-relative" role="img" aria-label="Monthly uptime against the 99.9 percent service level target"></div>
-                    <style>
-                      :root {
-                        --chart-uptime-sla-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Marker lines</h2>
-                    <p class="card-subtitle">Mark the moment something happened with <code>annotations.xaxis</code> — a release, a campaign, an incident.</p>
-
-                    <div id="chart-sales-with-markers" class="position-relative" role="img" aria-label="Monthly sales with campaign start markers"></div>
-                    <style>
-                      :root {
-                        --chart-sales-with-markers-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-sales-with-markers-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Brush and zoom</h2>
-                    <p class="card-subtitle">The small chart below picks the range shown above. Point it at the main chart id with <code>chart.brush</code> and render the main chart first.</p>
-
-                    <div id="chart-traffic-zoom" class="position-relative" role="img" aria-label="Sessions over 90 days, zoomed to the selected range"></div>
-                    <style>
-                      :root {
-                        --chart-traffic-zoom-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-traffic-zoom-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
-                      }
-                    </style>
-
-                    <div id="chart-traffic-brush" class="position-relative" role="img" aria-label="Range selector for the sessions chart"></div>
-                    <style>
-                      :root {
-                        --chart-traffic-brush-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Synced charts</h2>
-                    <p class="card-subtitle">Charts that share a <code>chart.group</code> name follow one another — hover or zoom on one and the rest do the same.</p>
-
-                    <div id="chart-synced-visits" class="position-relative" role="img" aria-label="Daily visits"></div>
-                    <style>
-                      :root {
-                        --chart-synced-visits-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-synced-visits-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
-                      }
-                    </style>
-
-                    <div id="chart-synced-signups" class="position-relative" role="img" aria-label="Daily sign-ups"></div>
-                    <style>
-                      :root {
-                        --chart-synced-signups-color-0: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-
-                    <div id="chart-synced-revenue" class="position-relative" role="img" aria-label="Daily revenue"></div>
-                    <style>
-                      :root {
-                        --chart-synced-revenue-color-0: color-mix(in srgb, transparent, var(--tblr-azure) 100%);
-                      }
-                    </style>
-                  </div>
+                <div class="col-auto ms-auto d-print-none">
+                  <a href="https://docs.tabler.io/ui/plugins/chart" target="_blank" rel="noopener" class="link-secondary">
+                    Docs
+                    <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
+                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                      <path d="M11 13l9 -9" />
+                      <path d="M15 4h5v5" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- END PAGE HEADER -->
+
+          <!-- BEGIN PAGE BODY -->
+          <div class="page-body">
+            <div class="container-xl">
+              <div class="row row-cards">
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Two y-axes</h2>
+                      <p class="card-subtitle">Plot values with different units together. Bind each axis to a series with the <code>yaxis.seriesName</code> chart option and move the second one to the right with <code>opposite</code>.</p>
+
+                      <div id="chart-revenue-vs-orders" class="position-relative" role="img" aria-label="Revenue in dollars and order count per month"></div>
+                      <style>
+                        :root {
+                          --chart-revenue-vs-orders-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-revenue-vs-orders-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Threshold line</h2>
+                      <p class="card-subtitle">Draw a target or a limit across the plot with <code>annotations.yaxis</code>, so a reader sees at a glance which points miss it.</p>
+
+                      <div id="chart-uptime-sla" class="position-relative" role="img" aria-label="Monthly uptime against the 99.9 percent service level target"></div>
+                      <style>
+                        :root {
+                          --chart-uptime-sla-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Marker lines</h2>
+                      <p class="card-subtitle">Mark the moment something happened with <code>annotations.xaxis</code> — a release, a campaign, an incident.</p>
+
+                      <div id="chart-sales-with-markers" class="position-relative" role="img" aria-label="Monthly sales with campaign start markers"></div>
+                      <style>
+                        :root {
+                          --chart-sales-with-markers-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-sales-with-markers-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Brush and zoom</h2>
+                      <p class="card-subtitle">The small chart below picks the range shown above. Point it at the main chart id with <code>chart.brush</code> and render the main chart first.</p>
+
+                      <div id="chart-traffic-zoom" class="position-relative" role="img" aria-label="Sessions over 90 days, zoomed to the selected range"></div>
+                      <style>
+                        :root {
+                          --chart-traffic-zoom-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-traffic-zoom-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
+                        }
+                      </style>
+
+                      <div id="chart-traffic-brush" class="position-relative" role="img" aria-label="Range selector for the sessions chart"></div>
+                      <style>
+                        :root {
+                          --chart-traffic-brush-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Synced charts</h2>
+                      <p class="card-subtitle">Charts that share a <code>chart.group</code> name follow one another — hover or zoom on one and the rest do the same.</p>
+
+                      <div id="chart-synced-visits" class="position-relative" role="img" aria-label="Daily visits"></div>
+                      <style>
+                        :root {
+                          --chart-synced-visits-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-synced-visits-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
+                        }
+                      </style>
+
+                      <div id="chart-synced-signups" class="position-relative" role="img" aria-label="Daily sign-ups"></div>
+                      <style>
+                        :root {
+                          --chart-synced-signups-color-0: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+
+                      <div id="chart-synced-revenue" class="position-relative" role="img" aria-label="Daily revenue"></div>
+                      <style>
+                        :root {
+                          --chart-synced-revenue-color-0: color-mix(in srgb, transparent, var(--tblr-azure) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END PAGE BODY -->
         </main>
-        <!-- END PAGE BODY -->
 
         <!-- BEGIN FOOTER -->
         <!--  BEGIN FOOTER  -->
@@ -2360,7 +2362,7 @@
                     <a href="." class="link-secondary">Tabler</a>. All rights reserved.
                   </li>
                   <li class="list-inline-item">
-                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.0 </a>
+                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.1 </a>
                   </li>
                 </ul>
               </div>
@@ -3325,9 +3327,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -3358,6 +3362,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -3398,9 +3406,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -3431,6 +3441,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -3477,9 +3491,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -3510,6 +3526,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -3650,9 +3670,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -3683,6 +3705,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -3831,9 +3857,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -3864,6 +3892,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -3936,9 +3968,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -3969,6 +4003,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4039,9 +4077,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4072,6 +4112,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4143,9 +4187,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4176,6 +4222,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }

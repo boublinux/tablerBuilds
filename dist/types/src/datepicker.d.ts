@@ -123,7 +123,7 @@ declare class Datepicker extends BaseComponent {
     _formatDate(dateStr: string): string;
     _formatPattern(): string | null;
     _dateSeparator(): string;
-    _formatDateForInput(dates: string[]): string;
+    _formatDateForInput(selectedDates: string[]): string;
     _parseInputValue(): void;
     _select(dates: string[]): void;
     _toIsoDate(value: Date | number | string): string;

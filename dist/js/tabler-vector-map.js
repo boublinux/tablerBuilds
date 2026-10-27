@@ -1,5 +1,5 @@
 /*!
-* Tabler v1.7.0 (https://tabler.io)
+* Tabler v1.7.1 (https://tabler.io)
 * Copyright 2018-2026 The Tabler Authors
 * Copyright 2018-2026 codecalm.net Paweł Kuna
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
@@ -8,7 +8,7 @@
 	typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.tabler = global.tabler || {}));
 })(this, function(exports) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-	//#region js/src/bootstrap/dom/data.ts
+	// js/src/bootstrap/dom/data.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap dom/data.ts
@@ -37,8 +37,7 @@
 			if (instanceMap.size === 0) elementMap.delete(element);
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/index.ts
+	// js/src/bootstrap/util/index.ts
 	var MILLISECONDS_MULTIPLIER = 1e3;
 	var TRANSITION_END = "transitionend";
 	var parseSelector = (selector) => {
@@ -118,8 +117,7 @@
 			if (!called) triggerTransitionEnd(transitionElement);
 		}, emulatedDuration);
 	};
-	//#endregion
-	//#region js/src/bootstrap/dom/event-handler.ts
+	// js/src/bootstrap/dom/event-handler.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap dom/event-handler.ts
@@ -329,8 +327,7 @@
 		}
 		return obj;
 	}
-	//#endregion
-	//#region js/src/bootstrap/dom/manipulator.ts
+	// js/src/bootstrap/dom/manipulator.ts
 	function normalizeData(value) {
 		if (value === "true") return true;
 		if (value === "false") return false;
@@ -375,8 +372,7 @@
 			return null;
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/config.ts
+	// js/src/bootstrap/util/config.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/config.ts
@@ -421,8 +417,7 @@
 			}
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/base-component.ts
+	// js/src/bootstrap/base-component.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap base-component.ts
@@ -477,8 +472,7 @@
 			return `${name}${this.EVENT_KEY}`;
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/dom/selector-engine.ts
+	// js/src/bootstrap/dom/selector-engine.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap dom/selector-engine.ts
@@ -557,8 +551,7 @@
 			return selector ? SelectorEngine.find(selector) : [];
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/component-functions.ts
+	// js/src/bootstrap/util/component-functions.ts
 	/**
 	* Creates the component for every element that matches on page load. One
 	* element with a broken config must not stop the rest of the bundle, so the
@@ -574,8 +567,9 @@
 			}
 		}
 	};
-	//#endregion
-	//#region js/src/vector-map.ts
+	// js/src/util/prefers-reduced-motion.ts
+	var prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	// js/src/vector-map.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler vector-map.ts
@@ -725,7 +719,6 @@
 	};
 	var round = (value) => Math.round(value * 10) / 10;
 	var clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-	var reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	/**
 	* Class definition
 	*
@@ -1017,7 +1010,7 @@
 		}
 		_animateTo(target) {
 			cancelAnimationFrame(this._frame);
-			if (!this._map || reducedMotion()) {
+			if (!this._map || prefersReducedMotion()) {
 				this._setView(target);
 				return;
 			}
@@ -1250,7 +1243,6 @@
 		document.addEventListener("DOMContentLoaded", init, { once: true });
 		window.addEventListener("load", init, { once: true });
 	}
-	//#endregion
 	exports.VectorMap = VectorMap;
 });
 

@@ -1,5 +1,5 @@
 /*!
-* Tabler v1.7.0 (https://tabler.io)
+* Tabler v1.7.1 (https://tabler.io)
 * Copyright 2018-2026 The Tabler Authors
 * Copyright 2018-2026 codecalm.net Paweł Kuna
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
@@ -8,7 +8,7 @@
 	typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.tabler = {}));
 })(this, function(exports) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-	//#region \0rolldown/runtime.js
+	// \0rolldown/runtime.js
 	var __defProp = Object.defineProperty;
 	var __exportAll = (all, no_symbols) => {
 		let target = {};
@@ -19,8 +19,7 @@
 		if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
 		return target;
 	};
-	//#endregion
-	//#region js/src/bootstrap/dom/data.ts
+	// js/src/bootstrap/dom/data.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap dom/data.ts
@@ -49,8 +48,7 @@
 			if (instanceMap.size === 0) elementMap.delete(element);
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/index.ts
+	// js/src/bootstrap/util/index.ts
 	var MAX_UID = 1e6;
 	var MILLISECONDS_MULTIPLIER = 1e3;
 	var TRANSITION_END = "transitionend";
@@ -93,6 +91,18 @@
 		if (isElement$1(object)) return object;
 		if (typeof object === "string" && object.length > 0) return document.querySelector(parseSelector(object));
 		return null;
+	};
+	var getFocusReturnTarget = (relatedTarget, container) => {
+		const target = unwrapJQuery(relatedTarget);
+		if (isElement$1(target) && !container.contains(target)) return target;
+		let activeElement = document.activeElement;
+		while (activeElement?.shadowRoot?.activeElement) activeElement = activeElement.shadowRoot.activeElement;
+		return (activeElement instanceof HTMLElement || activeElement instanceof SVGElement) && activeElement !== document.body && !container.contains(activeElement) ? activeElement : null;
+	};
+	var restoreFocus = (target, container) => {
+		if (!target || !isVisible(target)) return;
+		const { activeElement } = document;
+		if (!activeElement || activeElement === document.body || container.contains(activeElement)) target.focus();
 	};
 	var isVisible = (element) => {
 		if (!isElement$1(element) || element.getClientRects().length === 0) return false;
@@ -189,8 +199,7 @@
 		if (isCycleAllowed) index = (index + listLength) % listLength;
 		return list[Math.max(0, Math.min(index, listLength - 1))];
 	};
-	//#endregion
-	//#region js/src/bootstrap/dom/event-handler.ts
+	// js/src/bootstrap/dom/event-handler.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap dom/event-handler.ts
@@ -400,8 +409,7 @@
 		}
 		return obj;
 	}
-	//#endregion
-	//#region js/src/bootstrap/dom/manipulator.ts
+	// js/src/bootstrap/dom/manipulator.ts
 	function normalizeData(value) {
 		if (value === "true") return true;
 		if (value === "false") return false;
@@ -446,8 +454,7 @@
 			return null;
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/config.ts
+	// js/src/bootstrap/util/config.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/config.ts
@@ -492,8 +499,7 @@
 			}
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/base-component.ts
+	// js/src/bootstrap/base-component.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap base-component.ts
@@ -548,8 +554,7 @@
 			return `${name}${this.EVENT_KEY}`;
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/dom/selector-engine.ts
+	// js/src/bootstrap/dom/selector-engine.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap dom/selector-engine.ts
@@ -628,8 +633,7 @@
 			return selector ? SelectorEngine.find(selector) : [];
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/component-functions.ts
+	// js/src/bootstrap/util/component-functions.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/component-functions.ts
@@ -665,8 +669,7 @@
 			}
 		}
 	};
-	//#endregion
-	//#region js/src/autosize.ts
+	// js/src/autosize.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler autosize.ts
@@ -747,8 +750,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_TOGGLE$14, Autosize);
-	//#endregion
-	//#region js/src/clipboard.ts
+	// js/src/clipboard.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler clipboard.ts
@@ -878,8 +880,9 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_TOGGLE$13, Clipboard);
-	//#endregion
-	//#region js/src/confetti.ts
+	// js/src/util/prefers-reduced-motion.ts
+	var prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	// js/src/confetti.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler confetti.ts
@@ -1102,7 +1105,7 @@
 		burst() {
 			if (EventHandler.trigger(this._element, EVENT_START$1)?.defaultPrevented) return;
 			this.stop();
-			if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+			if (prefersReducedMotion()) {
 				EventHandler.trigger(this._element, EVENT_END);
 				return;
 			}
@@ -1156,8 +1159,7 @@
 		if (target !== this) instance._config = instance._getConfig(config);
 		instance.burst();
 	});
-	//#endregion
-	//#region js/src/countup.ts
+	// js/src/countup.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler countup.ts
@@ -1224,7 +1226,6 @@
 		return Number.parseFloat(input.replace(/[^0-9.-]/g, ""));
 	};
 	var easeOut$1 = (t) => t >= 1 ? 1 : (1 - 2 ** (-10 * t)) * 1024 / 1023;
-	var reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	/**
 	* Class definition
 	*
@@ -1321,7 +1322,7 @@
 		_animate(from, to) {
 			this._stop();
 			this._started = true;
-			if (from === to || this._config.duration <= 0 || reducedMotion()) {
+			if (from === to || this._config.duration <= 0 || prefersReducedMotion()) {
 				this._finish(to);
 				return;
 			}
@@ -1379,8 +1380,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_COUNTUP, CountUp);
-	//#endregion
-	//#region js/src/datepicker.ts
+	// js/src/datepicker.ts
 	/**
 	* Constants
 	*/
@@ -1447,6 +1447,7 @@
 		weekNumbers: "boolean",
 		vcpOptions: "object"
 	};
+	var validDates = (dates) => dates.filter((date) => typeof date === "string" && DATE_PATTERN.test(date));
 	var pad = (value, length = 2) => String(value).padStart(length, "0");
 	var formatPattern = (date, pattern) => {
 		const parts = {
@@ -1583,7 +1584,7 @@
 		}
 		getSelectedDates() {
 			const dates = this._calendar?.context?.selectedDates;
-			return dates && dates.length > 0 ? [...dates] : [...this._selectedDates];
+			return dates && dates.length > 0 ? validDates(dates) : [...this._selectedDates];
 		}
 		setSelectedDates(dates) {
 			this._select(dates.map((date) => this._toIsoDate(date)));
@@ -1769,7 +1770,7 @@
 		}
 		/** @internal */
 		_handleDateClick(self, event) {
-			const selectedDates = [...self.context.selectedDates];
+			const selectedDates = validDates(self.context.selectedDates);
 			this._selectedDates = selectedDates;
 			this._writeSelection(selectedDates);
 			const args = {
@@ -1807,7 +1808,8 @@
 		_dateSeparator() {
 			return this._config.selectionMode === "multiple-ranged" ? " – " : ", ";
 		}
-		_formatDateForInput(dates) {
+		_formatDateForInput(selectedDates) {
+			const dates = validDates(selectedDates);
 			if (dates.length === 0) return "";
 			if (dates.length === 1) return this._formatDate(dates[0]);
 			return dates.map((date) => this._formatDate(date)).join(this._dateSeparator());
@@ -1871,8 +1873,7 @@
 		const { dataset } = element;
 		return dataset.bsInline === "true" || dataset.tblrInline === "true" || "bsSelectedDates" in dataset || "tblrSelectedDates" in dataset || "bsBoundInput" in dataset || "tblrBoundInput" in dataset || Boolean(element.value);
 	});
-	//#endregion
-	//#region js/src/input-mask.ts
+	// js/src/input-mask.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler input-mask.ts
@@ -1987,13 +1988,11 @@
 		write,
 		afterWrite
 	];
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getNodeName.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getNodeName.js
 	function getNodeName(element) {
 		return element ? (element.nodeName || "").toLowerCase() : null;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindow.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindow.js
 	function getWindow(node) {
 		if (node == null) return window;
 		if (node.toString() !== "[object Window]") {
@@ -2002,8 +2001,7 @@
 		}
 		return node;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/instanceOf.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/instanceOf.js
 	function isElement(node) {
 		return node instanceof getWindow(node).Element || node instanceof Element;
 	}
@@ -2014,8 +2012,7 @@
 		if (typeof ShadowRoot === "undefined") return false;
 		return node instanceof getWindow(node).ShadowRoot || node instanceof ShadowRoot;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/applyStyles.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/applyStyles.js
 	function applyStyles(_ref) {
 		var state = _ref.state;
 		Object.keys(state.elements).forEach(function(name) {
@@ -2070,18 +2067,15 @@
 		effect: effect$2,
 		requires: ["computeStyles"]
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getBasePlacement.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getBasePlacement.js
 	function getBasePlacement(placement) {
 		return placement.split("-")[0];
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/math.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/math.js
 	var max = Math.max;
 	var min = Math.min;
 	var round = Math.round;
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/userAgent.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/userAgent.js
 	function getUAString() {
 		var uaData = navigator.userAgentData;
 		if (uaData != null && uaData.brands && Array.isArray(uaData.brands)) return uaData.brands.map(function(item) {
@@ -2089,13 +2083,11 @@
 		}).join(" ");
 		return navigator.userAgent;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isLayoutViewport.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isLayoutViewport.js
 	function isLayoutViewport() {
 		return !/^((?!chrome|android).)*safari/i.test(getUAString());
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js
 	function getBoundingClientRect(element, includeScale, isFixedStrategy) {
 		if (includeScale === void 0) includeScale = false;
 		if (isFixedStrategy === void 0) isFixedStrategy = false;
@@ -2123,8 +2115,7 @@
 			y
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js
 	function getLayoutRect(element) {
 		var clientRect = getBoundingClientRect(element);
 		var width = element.offsetWidth;
@@ -2138,8 +2129,7 @@
 			height
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/contains.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/contains.js
 	function contains(parent, child) {
 		var rootNode = child.getRootNode && child.getRootNode();
 		if (parent.contains(child)) return true;
@@ -2152,13 +2142,11 @@
 		}
 		return false;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getComputedStyle.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getComputedStyle.js
 	function getComputedStyle$1(element) {
 		return getWindow(element).getComputedStyle(element);
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isTableElement.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isTableElement.js
 	function isTableElement(element) {
 		return [
 			"table",
@@ -2166,19 +2154,16 @@
 			"th"
 		].indexOf(getNodeName(element)) >= 0;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getDocumentElement.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getDocumentElement.js
 	function getDocumentElement(element) {
 		return ((isElement(element) ? element.ownerDocument : element.document) || window.document).documentElement;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getParentNode.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getParentNode.js
 	function getParentNode(element) {
 		if (getNodeName(element) === "html") return element;
 		return element.assignedSlot || element.parentNode || (isShadowRoot(element) ? element.host : null) || getDocumentElement(element);
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js
 	function getTrueOffsetParent(element) {
 		if (!isHTMLElement(element) || getComputedStyle$1(element).position === "fixed") return null;
 		return element.offsetParent;
@@ -2204,13 +2189,11 @@
 		if (offsetParent && (getNodeName(offsetParent) === "html" || getNodeName(offsetParent) === "body" && getComputedStyle$1(offsetParent).position === "static")) return window;
 		return offsetParent || getContainingBlock(element) || window;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getMainAxisFromPlacement.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getMainAxisFromPlacement.js
 	function getMainAxisFromPlacement(placement) {
 		return ["top", "bottom"].indexOf(placement) >= 0 ? "x" : "y";
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/within.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/within.js
 	function within(min$2, value, max$2) {
 		return max(min$2, min(value, max$2));
 	}
@@ -2218,8 +2201,7 @@
 		var v = within(min, value, max);
 		return v > max ? max : v;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getFreshSideObject.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getFreshSideObject.js
 	function getFreshSideObject() {
 		return {
 			top: 0,
@@ -2228,21 +2210,18 @@
 			left: 0
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/mergePaddingObject.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/mergePaddingObject.js
 	function mergePaddingObject(paddingObject) {
 		return Object.assign({}, getFreshSideObject(), paddingObject);
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/expandToHashMap.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/expandToHashMap.js
 	function expandToHashMap(value, keys) {
 		return keys.reduce(function(hashMap, key) {
 			hashMap[key] = value;
 			return hashMap;
 		}, {});
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/arrow.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/arrow.js
 	var toPaddingObject = function toPaddingObject(padding, state) {
 		padding = typeof padding === "function" ? padding(Object.assign({}, state.rects, { placement: state.placement })) : padding;
 		return mergePaddingObject(typeof padding !== "number" ? padding : expandToHashMap(padding, basePlacements));
@@ -2292,13 +2271,11 @@
 		requires: ["popperOffsets"],
 		requiresIfExists: ["preventOverflow"]
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getVariation.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getVariation.js
 	function getVariation(placement) {
 		return placement.split("-")[1];
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/computeStyles.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/computeStyles.js
 	var unsetSides = {
 		top: "auto",
 		right: "auto",
@@ -2404,8 +2381,7 @@
 		fn: computeStyles,
 		data: {}
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/eventListeners.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/eventListeners.js
 	var passive = { passive: true };
 	function effect(_ref) {
 		var state = _ref.state, instance = _ref.instance, options = _ref.options;
@@ -2431,8 +2407,7 @@
 		effect,
 		data: {}
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getOppositePlacement.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getOppositePlacement.js
 	var hash$1 = {
 		left: "right",
 		right: "left",
@@ -2444,8 +2419,7 @@
 			return hash$1[matched];
 		});
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getOppositeVariationPlacement.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getOppositeVariationPlacement.js
 	var hash = {
 		start: "end",
 		end: "start"
@@ -2455,8 +2429,7 @@
 			return hash[matched];
 		});
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindowScroll.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindowScroll.js
 	function getWindowScroll(node) {
 		var win = getWindow(node);
 		return {
@@ -2464,13 +2437,11 @@
 			scrollTop: win.pageYOffset
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindowScrollBarX.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getWindowScrollBarX.js
 	function getWindowScrollBarX(element) {
 		return getBoundingClientRect(getDocumentElement(element)).left + getWindowScroll(element).scrollLeft;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js
 	function getViewportRect(element, strategy) {
 		var win = getWindow(element);
 		var html = getDocumentElement(element);
@@ -2495,8 +2466,7 @@
 			y
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getDocumentRect.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getDocumentRect.js
 	function getDocumentRect(element) {
 		var _element$ownerDocumen;
 		var html = getDocumentElement(element);
@@ -2514,14 +2484,12 @@
 			y
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isScrollParent.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/isScrollParent.js
 	function isScrollParent(element) {
 		var _getComputedStyle = getComputedStyle$1(element), overflow = _getComputedStyle.overflow, overflowX = _getComputedStyle.overflowX, overflowY = _getComputedStyle.overflowY;
 		return /auto|scroll|overlay|hidden/.test(overflow + overflowY + overflowX);
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getScrollParent.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getScrollParent.js
 	function getScrollParent(node) {
 		if ([
 			"html",
@@ -2531,8 +2499,7 @@
 		if (isHTMLElement(node) && isScrollParent(node)) return node;
 		return getScrollParent(getParentNode(node));
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/listScrollParents.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/listScrollParents.js
 	function listScrollParents(element, list) {
 		var _element$ownerDocumen;
 		if (list === void 0) list = [];
@@ -2543,8 +2510,7 @@
 		var updatedList = list.concat(target);
 		return isBody ? updatedList : updatedList.concat(listScrollParents(getParentNode(target)));
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/rectToClientRect.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/rectToClientRect.js
 	function rectToClientRect(rect) {
 		return Object.assign({}, rect, {
 			left: rect.x,
@@ -2553,8 +2519,7 @@
 			bottom: rect.y + rect.height
 		});
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getClippingRect.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getClippingRect.js
 	function getInnerBoundingClientRect(element, strategy) {
 		var rect = getBoundingClientRect(element, false, strategy === "fixed");
 		rect.top = rect.top + element.clientTop;
@@ -2596,8 +2561,7 @@
 		clippingRect.y = clippingRect.top;
 		return clippingRect;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/computeOffsets.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/computeOffsets.js
 	function computeOffsets(_ref) {
 		var reference = _ref.reference, element = _ref.element, placement = _ref.placement;
 		var basePlacement = placement ? getBasePlacement(placement) : null;
@@ -2647,8 +2611,7 @@
 		}
 		return offsets;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/detectOverflow.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/detectOverflow.js
 	function detectOverflow(state, options) {
 		if (options === void 0) options = {};
 		var _options = options, _options$placement = _options.placement, placement = _options$placement === void 0 ? state.placement : _options$placement, _options$strategy = _options.strategy, strategy = _options$strategy === void 0 ? state.strategy : _options$strategy, _options$boundary = _options.boundary, boundary = _options$boundary === void 0 ? clippingParents : _options$boundary, _options$rootBoundary = _options.rootBoundary, rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary, _options$elementConte = _options.elementContext, elementContext = _options$elementConte === void 0 ? popper : _options$elementConte, _options$altBoundary = _options.altBoundary, altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary, _options$padding = _options.padding, padding = _options$padding === void 0 ? 0 : _options$padding;
@@ -2683,8 +2646,7 @@
 		}
 		return overflowOffsets;
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/computeAutoPlacement.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/computeAutoPlacement.js
 	function computeAutoPlacement(state, options) {
 		if (options === void 0) options = {};
 		var _options = options, placement = _options.placement, boundary = _options.boundary, rootBoundary = _options.rootBoundary, padding = _options.padding, flipVariations = _options.flipVariations, _options$allowedAutoP = _options.allowedAutoPlacements, allowedAutoPlacements = _options$allowedAutoP === void 0 ? placements : _options$allowedAutoP;
@@ -2709,8 +2671,7 @@
 			return overflows[a] - overflows[b];
 		});
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/flip.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/flip.js
 	function getExpandedFallbackPlacements(placement) {
 		if (getBasePlacement(placement) === "auto") return [];
 		var oppositePlacement = getOppositePlacement(placement);
@@ -2800,8 +2761,7 @@
 		requiresIfExists: ["offset"],
 		data: { _skip: false }
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/hide.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/hide.js
 	function getSideOffsets(overflow, rect, preventedOffsets) {
 		if (preventedOffsets === void 0) preventedOffsets = {
 			x: 0,
@@ -2853,8 +2813,7 @@
 		requiresIfExists: ["preventOverflow"],
 		fn: hide
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/offset.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/offset.js
 	function distanceAndSkiddingToXY(placement, rects, offset) {
 		var basePlacement = getBasePlacement(placement);
 		var invertDistance = ["left", "top"].indexOf(basePlacement) >= 0 ? -1 : 1;
@@ -2890,8 +2849,7 @@
 		requires: ["popperOffsets"],
 		fn: offset
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/popperOffsets.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/popperOffsets.js
 	function popperOffsets(_ref) {
 		var state = _ref.state, name = _ref.name;
 		state.modifiersData[name] = computeOffsets({
@@ -2908,13 +2866,11 @@
 		fn: popperOffsets,
 		data: {}
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getAltAxis.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/getAltAxis.js
 	function getAltAxis(axis) {
 		return axis === "x" ? "y" : "x";
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/preventOverflow.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/modifiers/preventOverflow.js
 	function preventOverflow(_ref) {
 		var state = _ref.state, options = _ref.options, name = _ref.name;
 		var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, padding = options.padding, _options$tether = options.tether, tether = _options$tether === void 0 ? true : _options$tether, _options$tetherOffset = options.tetherOffset, tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
@@ -3002,22 +2958,19 @@
 		fn: preventOverflow,
 		requiresIfExists: ["offset"]
 	};
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getHTMLElementScroll.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getHTMLElementScroll.js
 	function getHTMLElementScroll(element) {
 		return {
 			scrollLeft: element.scrollLeft,
 			scrollTop: element.scrollTop
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getNodeScroll.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getNodeScroll.js
 	function getNodeScroll(node) {
 		if (node === getWindow(node) || !isHTMLElement(node)) return getWindowScroll(node);
 		else return getHTMLElementScroll(node);
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js
 	function isElementScaled(element) {
 		var rect = element.getBoundingClientRect();
 		var scaleX = round(rect.width) / element.offsetWidth || 1;
@@ -3053,8 +3006,7 @@
 			height: rect.height
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/orderModifiers.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/orderModifiers.js
 	function order(modifiers) {
 		var map = /* @__PURE__ */ new Map();
 		var visited = /* @__PURE__ */ new Set();
@@ -3085,8 +3037,7 @@
 			}));
 		}, []);
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/debounce.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/debounce.js
 	function debounce(fn) {
 		var pending;
 		return function() {
@@ -3099,8 +3050,7 @@
 			return pending;
 		};
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/mergeByName.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/utils/mergeByName.js
 	function mergeByName(modifiers) {
 		var merged = modifiers.reduce(function(merged, current) {
 			var existing = merged[current.name];
@@ -3114,8 +3064,7 @@
 			return merged[key];
 		});
 	}
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/createPopper.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/createPopper.js
 	var DEFAULT_OPTIONS = {
 		placement: "bottom",
 		modifiers: [],
@@ -3247,8 +3196,7 @@
 		arrow_default,
 		hide_default
 	] });
-	//#endregion
-	//#region ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/index.js
+	// ../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/index.js
 	var lib_exports = /* @__PURE__ */ __exportAll({
 		afterMain: () => afterMain,
 		afterRead: () => afterRead,
@@ -3289,8 +3237,7 @@
 		viewport: () => viewport,
 		write: () => write
 	});
-	//#endregion
-	//#region js/src/bootstrap/alert.ts
+	// js/src/bootstrap/alert.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap alert.ts
@@ -3329,8 +3276,7 @@
 	};
 	enableDismissTrigger(Alert, "close");
 	defineJQueryPlugin(Alert);
-	//#endregion
-	//#region js/src/bootstrap/button.ts
+	// js/src/bootstrap/button.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap button.ts
@@ -3364,8 +3310,7 @@
 		Button.getOrCreateInstance(target).toggle();
 	});
 	defineJQueryPlugin(Button);
-	//#endregion
-	//#region js/src/bootstrap/util/swipe.ts
+	// js/src/bootstrap/util/swipe.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/swipe.ts
@@ -3456,8 +3401,7 @@
 			return "ontouchstart" in document.documentElement || navigator.maxTouchPoints > 0;
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/carousel.ts
+	// js/src/bootstrap/carousel.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap carousel.ts
@@ -3733,8 +3677,7 @@
 		for (const carousel of carousels) Carousel.getOrCreateInstance(carousel);
 	});
 	defineJQueryPlugin(Carousel);
-	//#endregion
-	//#region js/src/bootstrap/collapse.ts
+	// js/src/bootstrap/collapse.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap collapse.ts
@@ -3889,8 +3832,7 @@
 		for (const element of SelectorEngine.getMultipleElementsFromSelector(this)) Collapse.getOrCreateInstance(element, { toggle: false }).toggle();
 	});
 	defineJQueryPlugin(Collapse);
-	//#endregion
-	//#region js/src/bootstrap/dropdown.ts
+	// js/src/bootstrap/dropdown.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap dropdown.ts
@@ -4124,8 +4066,7 @@
 		Dropdown.getOrCreateInstance(this).toggle();
 	});
 	defineJQueryPlugin(Dropdown);
-	//#endregion
-	//#region js/src/bootstrap/util/backdrop.ts
+	// js/src/bootstrap/util/backdrop.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/backdrop.ts
@@ -4222,8 +4163,7 @@
 			executeAfterTransition(callback, this._getElement(), this._config.isAnimated);
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/focustrap.ts
+	// js/src/bootstrap/util/focustrap.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/focustrap.ts
@@ -4287,8 +4227,7 @@
 			this._lastTabNavDirection = event.shiftKey ? TAB_NAV_BACKWARD : TAB_NAV_FORWARD;
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/util/scrollbar.ts
+	// js/src/bootstrap/util/scrollbar.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/scrollbar.ts
@@ -4361,8 +4300,7 @@
 			for (const sel of SelectorEngine.find(selector, this._element)) callBack(sel);
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/modal.ts
+	// js/src/bootstrap/modal.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap modal.ts
@@ -4415,6 +4353,7 @@
 			this._focustrap = this._initializeFocusTrap();
 			this._isShown = false;
 			this._isTransitioning = false;
+			this._returnFocusTarget = null;
 			this._scrollBar = new ScrollBarHelper();
 			this._addEventListeners();
 		}
@@ -4433,6 +4372,7 @@
 		show(relatedTarget) {
 			if (this._isShown || this._isTransitioning) return;
 			if (EventHandler.trigger(this._element, EVENT_SHOW$4, { relatedTarget })?.defaultPrevented) return;
+			this._returnFocusTarget = getFocusReturnTarget(relatedTarget, this._element);
 			this._isShown = true;
 			this._isTransitioning = true;
 			this._scrollBar.hide();
@@ -4447,7 +4387,9 @@
 			this._isTransitioning = true;
 			this._focustrap.deactivate();
 			this._element.classList.remove(CLASS_NAME_SHOW$5);
-			this._queueCallback(() => this._hideModal(), this._element, this._isAnimated());
+			const returnFocusTarget = this._returnFocusTarget;
+			this._returnFocusTarget = null;
+			this._queueCallback(() => this._hideModal(returnFocusTarget), this._element, this._isAnimated());
 		}
 		dispose() {
 			EventHandler.off(window, EVENT_KEY$8);
@@ -4509,7 +4451,7 @@
 				});
 			});
 		}
-		_hideModal() {
+		_hideModal(returnFocusTarget) {
 			this._element.style.display = "none";
 			this._element.setAttribute("aria-hidden", "true");
 			this._element.removeAttribute("aria-modal");
@@ -4519,7 +4461,9 @@
 				document.body.classList.remove(CLASS_NAME_OPEN);
 				this._resetAdjustments();
 				this._scrollBar.reset();
-				EventHandler.trigger(this._element, EVENT_HIDDEN$4);
+				const element = this._element;
+				EventHandler.trigger(element, EVENT_HIDDEN$4);
+				if (!Modal.getInstance(element)?._isShown) restoreFocus(returnFocusTarget, element);
 			});
 		}
 		_isAnimated() {
@@ -4573,20 +4517,13 @@
 		const target = SelectorEngine.getElementFromSelector(this);
 		if (["A", "AREA"].includes(this.tagName)) event.preventDefault();
 		if (!target) return;
-		EventHandler.one(target, EVENT_SHOW$4, (showEvent) => {
-			if (showEvent?.defaultPrevented) return;
-			EventHandler.one(target, EVENT_HIDDEN$4, () => {
-				if (isVisible(this)) this.focus();
-			});
-		});
 		const alreadyOpen = SelectorEngine.findOne(OPEN_SELECTOR$1);
 		if (alreadyOpen) Modal.getInstance(alreadyOpen).hide();
 		Modal.getOrCreateInstance(target).toggle(this);
 	});
 	enableDismissTrigger(Modal);
 	defineJQueryPlugin(Modal);
-	//#endregion
-	//#region js/src/bootstrap/util/sanitizer.ts
+	// js/src/bootstrap/util/sanitizer.ts
 	var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
 	var DefaultAllowlist = {
 		"*": [
@@ -4754,8 +4691,7 @@
 		}
 		return createdDocument.body.innerHTML;
 	}
-	//#endregion
-	//#region js/src/bootstrap/nav-overflow.ts
+	// js/src/bootstrap/nav-overflow.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap nav-overflow.ts
@@ -5136,8 +5072,7 @@
 	* jQuery
 	*/
 	defineJQueryPlugin(NavOverflow);
-	//#endregion
-	//#region js/src/bootstrap/offcanvas.ts
+	// js/src/bootstrap/offcanvas.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap offcanvas.ts
@@ -5183,6 +5118,7 @@
 		constructor(element, config) {
 			super(element, config);
 			this._isShown = false;
+			this._returnFocusTarget = null;
 			this._backdrop = this._initializeBackDrop();
 			this._focustrap = this._initializeFocusTrap();
 			this._addEventListeners();
@@ -5202,6 +5138,7 @@
 		show(relatedTarget) {
 			if (this._isShown) return;
 			if (EventHandler.trigger(this._element, EVENT_SHOW$3, { relatedTarget })?.defaultPrevented) return;
+			this._returnFocusTarget = getFocusReturnTarget(relatedTarget, this._element);
 			this._isShown = true;
 			this._backdrop.show();
 			if (!this._config.scroll) new ScrollBarHelper().hide();
@@ -5224,12 +5161,16 @@
 			this._isShown = false;
 			this._element.classList.add(CLASS_NAME_HIDING);
 			this._backdrop.hide();
+			const element = this._element;
+			const returnFocusTarget = this._returnFocusTarget;
+			this._returnFocusTarget = null;
 			const completeCallback = () => {
 				this._element.classList.remove(CLASS_NAME_SHOW$3, CLASS_NAME_HIDING);
 				this._element.removeAttribute("aria-modal");
 				this._element.removeAttribute("role");
 				if (!this._config.scroll) new ScrollBarHelper().reset();
-				EventHandler.trigger(this._element, EVENT_HIDDEN$3);
+				EventHandler.trigger(element, EVENT_HIDDEN$3);
+				if (!Offcanvas.getInstance(element)?._isShown) restoreFocus(returnFocusTarget, element);
 			};
 			this._queueCallback(completeCallback, this._element, true);
 		}
@@ -5285,9 +5226,6 @@
 		if (["A", "AREA"].includes(this.tagName)) event.preventDefault();
 		if (!target) return;
 		if (isDisabled(this)) return;
-		EventHandler.one(target, EVENT_HIDDEN$3, () => {
-			if (isVisible(this)) this.focus();
-		});
 		const alreadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
 		if (alreadyOpen && alreadyOpen !== target) Offcanvas.getInstance(alreadyOpen).hide();
 		Offcanvas.getOrCreateInstance(target).toggle(this);
@@ -5300,8 +5238,7 @@
 	});
 	enableDismissTrigger(Offcanvas);
 	defineJQueryPlugin(Offcanvas);
-	//#endregion
-	//#region js/src/bootstrap/util/template-factory.ts
+	// js/src/bootstrap/util/template-factory.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap util/template-factory.ts
@@ -5411,8 +5348,7 @@
 			templateElement.textContent = element.textContent;
 		}
 	};
-	//#endregion
-	//#region js/src/bootstrap/tooltip.ts
+	// js/src/bootstrap/tooltip.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap tooltip.ts
@@ -5809,8 +5745,7 @@
 		}
 	};
 	defineJQueryPlugin(Tooltip);
-	//#endregion
-	//#region js/src/bootstrap/popover.ts
+	// js/src/bootstrap/popover.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap popover.ts
@@ -5873,8 +5808,7 @@
 		}
 	};
 	defineJQueryPlugin(Popover);
-	//#endregion
-	//#region js/src/bootstrap/scrollspy.ts
+	// js/src/bootstrap/scrollspy.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap scrollspy.ts
@@ -6053,8 +5987,7 @@
 		for (const spy of SelectorEngine.find(SELECTOR_DATA_SPY)) ScrollSpy.getOrCreateInstance(spy);
 	});
 	defineJQueryPlugin(ScrollSpy);
-	//#endregion
-	//#region js/src/bootstrap/tab.ts
+	// js/src/bootstrap/tab.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap tab.ts
@@ -6232,8 +6165,7 @@
 		for (const element of SelectorEngine.find(SELECTOR_DATA_TOGGLE_ACTIVE)) Tab.getOrCreateInstance(element);
 	});
 	defineJQueryPlugin(Tab);
-	//#endregion
-	//#region js/src/bootstrap/toast.ts
+	// js/src/bootstrap/toast.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap toast.ts
@@ -6360,8 +6292,7 @@
 	};
 	enableDismissTrigger(Toast);
 	defineJQueryPlugin(Toast);
-	//#endregion
-	//#region js/src/bootstrap.ts
+	// js/src/bootstrap.ts
 	var bootstrap = {
 		Alert,
 		Button,
@@ -6377,8 +6308,7 @@
 		Toast,
 		Tooltip
 	};
-	//#endregion
-	//#region js/src/dropdown.ts
+	// js/src/dropdown.ts
 	onDOMContentLoaded(() => {
 		for (const dropdownTriggerEl of document.querySelectorAll("[data-bs-toggle=\"dropdown\"], [data-tblr-toggle=\"dropdown\"]")) try {
 			const options = { boundary: Manipulator.getDataAttribute(dropdownTriggerEl, "boundary") === "viewport" ? document.documentElement : "clippingParents" };
@@ -6387,8 +6317,7 @@
 			console.error(error);
 		}
 	});
-	//#endregion
-	//#region js/src/sidebar.ts
+	// js/src/sidebar.ts
 	var syncSidebarToggles = (folded) => {
 		for (const toggle of document.querySelectorAll("[data-bs-toggle=\"sidebar-folded\"], [data-tblr-toggle=\"sidebar-folded\"]")) toggle.setAttribute("aria-pressed", String(folded));
 	};
@@ -6428,8 +6357,7 @@
 		hideSidebarDropdowns();
 		document.dispatchEvent(new CustomEvent("tabler:sidebar-folded", { detail: { folded: willFold } }));
 	});
-	//#endregion
-	//#region js/src/tooltip.ts
+	// js/src/tooltip.ts
 	onDOMContentLoaded(() => {
 		for (const tooltipTriggerEl of document.querySelectorAll("[data-bs-toggle=\"tooltip\"], [data-tblr-toggle=\"tooltip\"]")) try {
 			const options = {
@@ -6444,8 +6372,7 @@
 			console.error(error);
 		}
 	});
-	//#endregion
-	//#region js/src/popover.ts
+	// js/src/popover.ts
 	onDOMContentLoaded(() => {
 		for (const popoverTriggerEl of document.querySelectorAll("[data-bs-toggle=\"popover\"], [data-tblr-toggle=\"popover\"]")) try {
 			const options = {
@@ -6460,8 +6387,7 @@
 			console.error(error);
 		}
 	});
-	//#endregion
-	//#region js/src/switch-icon.ts
+	// js/src/switch-icon.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler switch-icon.ts
@@ -6557,8 +6483,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_TOGGLE$3, SwitchIcon);
-	//#endregion
-	//#region js/src/tab.ts
+	// js/src/tab.ts
 	var EnableActivationTabsFromLocationHash = () => {
 		const locationHash = window.location.hash;
 		if (!locationHash) return;
@@ -6572,8 +6497,7 @@
 		}
 	};
 	onDOMContentLoaded(EnableActivationTabsFromLocationHash);
-	//#endregion
-	//#region js/src/toast.ts
+	// js/src/toast.ts
 	onDOMContentLoaded(() => {
 		for (const toastTriggerEl of document.querySelectorAll("[data-bs-toggle=\"toast\"], [data-tblr-toggle=\"toast\"]")) try {
 			const toastEl = SelectorEngine.getElementFromSelector(toastTriggerEl);
@@ -6586,8 +6510,7 @@
 			console.error(error);
 		}
 	});
-	//#endregion
-	//#region js/src/sortable.ts
+	// js/src/sortable.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler sortable.ts
@@ -6657,8 +6580,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_SORTABLE, Sortable);
-	//#endregion
-	//#region js/src/otp-input.ts
+	// js/src/otp-input.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Bootstrap otp-input.ts
@@ -6996,8 +6918,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_TOGGLE$2, OtpInput);
-	//#endregion
-	//#region js/src/sparkline.ts
+	// js/src/sparkline.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler sparkline.ts
@@ -7209,7 +7130,7 @@
 			return Math.max(0, Math.min(1, (value - min) / clampSpan(min, max)));
 		}
 		_canAnimate(from, to) {
-			if (this._config.animation <= 0 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+			if (this._config.animation <= 0 || prefersReducedMotion()) return false;
 			if (from.getAttribute("viewBox") !== to.getAttribute("viewBox") || from.children.length !== to.children.length) return false;
 			return Array.from(from.children).every((child, i) => child.tagName === to.children[i].tagName);
 		}
@@ -7415,8 +7336,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_TOGGLE$1, Sparkline);
-	//#endregion
-	//#region js/src/strength.ts
+	// js/src/strength.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler strength.ts
@@ -7602,8 +7522,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_STRENGTH, Strength);
-	//#endregion
-	//#region js/src/number-input.ts
+	// js/src/number-input.ts
 	/**
 	* --------------------------------------------------------------------------
 	* Tabler number-input.ts
@@ -7936,8 +7855,7 @@
 	* Data API implementation
 	*/
 	initAll(SELECTOR_DATA_TOGGLE, NumberInput);
-	//#endregion
-	//#region js/src/deprecated.ts
+	// js/src/deprecated.ts
 	var deprecated_exports = /* @__PURE__ */ __exportAll({
 		getColor: () => getColor,
 		hexToRgba: () => hexToRgba,
@@ -7961,7 +7879,6 @@
 		if (opacity === 1) return c;
 		return hexToRgba(c, opacity) ?? (c ? `color-mix(in srgb, ${c} ${opacity * 100}%, transparent)` : null);
 	};
-	//#endregion
 	exports.Alert = Alert;
 	exports.Autosize = Autosize;
 	exports.Button = Button;

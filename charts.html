@@ -2184,959 +2184,961 @@
       <!-- END NAVBAR  -->
 
       <div class="page-wrapper">
-        <!-- BEGIN PAGE HEADER -->
+        <main id="content" class="d-flex flex-column flex-fill">
+          <!-- BEGIN PAGE HEADER -->
 
-        <div class="page-header d-print-none">
-          <div class="container-xl">
-            <div class="row g-2 align-items-center">
-              <div class="col">
-                <h1 class="page-title">Charts</h1>
-              </div>
+          <div class="page-header d-print-none">
+            <div class="container-xl">
+              <div class="row g-2 align-items-center">
+                <div class="col">
+                  <h1 class="page-title">Charts</h1>
+                </div>
 
-              <div class="col-auto ms-auto d-print-none">
-                <a href="https://docs.tabler.io/ui/plugins/chart" target="_blank" rel="noopener" class="link-secondary">
-                  Docs
-                  <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
-                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                    <path d="M11 13l9 -9" />
-                    <path d="M15 4h5v5" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END PAGE HEADER -->
-
-        <!-- BEGIN PAGE BODY -->
-        <main id="content" class="page-body">
-          <div class="container-xl">
-            <div class="row row-cards">
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex">
-                      <h2 class="card-title">Active users</h2>
-                      <div class="ms-auto">
-                        <div class="dropdown">
-                          <button type="button" class="dropdown-toggle text-secondary border-0 bg-transparent p-0" id="active-users-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select time range for active users">Last 7 days</button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="active-users-dropdown">
-                            <button type="button" class="dropdown-item active" aria-current="true">Last 7 days</button>
-                            <button type="button" class="dropdown-item">Last 30 days</button>
-                            <button type="button" class="dropdown-item">Last 3 months</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col">
-                        <div id="chart-active-users-2" class="position-relative" role="img" aria-label="Active users"></div>
-                        <style>
-                          :root {
-                            --chart-active-users-2-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                            --chart-active-users-2-color-1: color-mix(in srgb, transparent, var(--tblr-azure) 100%);
-                            --chart-active-users-2-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                          }
-                        </style>
-                      </div>
-                      <div class="col-md-auto">
-                        <div class="divide-y divide-y-fill">
-                          <div class="px-3">
-                            <div class="text-secondary"><span class="status-dot bg-primary"></span> Mobile</div>
-                            <div class="h2">10,601</div>
-                          </div>
-                          <div class="px-3">
-                            <div class="text-secondary"><span class="status-dot bg-azure"></span> Desktop</div>
-                            <div class="h2">6,109</div>
-                          </div>
-                          <div class="px-3">
-                            <div class="text-secondary"><span class="status-dot bg-green"></span> Tablet</div>
-                            <div class="h2">2,260</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h2 class="card-title">Chart with legend</h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list legend-list-divided mb-3" id="legend-demo-list">
-                      <button type="button" data-series="Total visits" class="legend legend-lg legend-yellow">
-                        <span class="legend-dot"></span>
-                        Total visits<span class="legend-value"> 63.0k </span>
-                      </button>
-                      <button type="button" data-series="Unique visitors" class="legend legend-lg legend-green">
-                        <span class="legend-dot"></span>
-                        Unique visitors<span class="legend-value"> 43.0k </span>
-                      </button>
-                      <button type="button" data-series="New users" class="legend legend-lg legend-primary">
-                        <span class="legend-dot"></span>
-                        New users<span class="legend-value"> 13.5k </span>
-                      </button>
-                    </div>
-
-                    <div id="chart-legend-demo" class="position-relative" role="img" aria-label="Site traffic"></div>
-                    <style>
-                      :root {
-                        --chart-legend-demo-color-0: color-mix(in srgb, transparent, var(--tblr-yellow) 100%);
-                        --chart-legend-demo-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                        --chart-legend-demo-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex">
-                      <h2 class="card-title">Social referrals</h2>
-                      <div class="ms-auto">
-                        <div class="dropdown">
-                          <button type="button" class="dropdown-toggle text-secondary border-0 bg-transparent p-0" id="social-referrals-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select time range for sales data">Last 7 days</button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="social-referrals-dropdown">
-                            <button type="button" class="dropdown-item active" aria-current="true">Last 7 days</button>
-                            <button type="button" class="dropdown-item">Last 30 days</button>
-                            <button type="button" class="dropdown-item">Last 3 months</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div id="chart-social-referrals" class="position-relative" role="img" aria-label="Social referrals"></div>
-                    <style>
-                      :root {
-                        --chart-social-referrals-color-0: color-mix(in srgb, transparent, var(--tblr-facebook) 100%);
-                        --chart-social-referrals-color-1: color-mix(in srgb, transparent, var(--tblr-twitter) 100%);
-                        --chart-social-referrals-color-2: color-mix(in srgb, transparent, var(--tblr-dribbble) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h2 class="card-title">Sprint velocity</h2>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-tasks-overview" class="position-relative" role="img" aria-label="Story points completed per sprint"></div>
-                    <style>
-                      :root {
-                        --chart-tasks-overview-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <h2 class="page-section-title">Line charts</h2>
-                <p class="page-section-description">Trends over time, where the change between points matters more than single values.</p>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Line chart</h3>
-                      <p class="card-subtitle">Tickets solved per day with a smooth curve, the default.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-completion-tasks-2" class="position-relative" role="img" aria-label="Line chart"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-2-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Straight line</h3>
-                      <p class="card-subtitle">The same tickets drawn with straight segments.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-completion-tasks-4" class="position-relative" role="img" aria-label="Straight line"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-4-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Stepped line</h3>
-                      <p class="card-subtitle">A stepped line for values that change in jumps.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-completion-tasks-5" class="position-relative" role="img" aria-label="Stepped line"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-5-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Data labels</h3>
-                      <p class="card-subtitle">Tickets solved per day, labeled with values.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-completion-tasks-7" class="position-relative" role="img" aria-label="Data labels"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-7-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-8">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Issue activity</h3>
-                      <p class="card-subtitle">Issues opened, closed and reopened per day over the last 17 days.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Opened</span
-                      ><span class="legend legend-lime">
-                        <span class="legend-dot"></span>
-                        Closed</span
-                      ><span class="legend legend-orange">
-                        <span class="legend-dot"></span>
-                        Reopened</span
-                      >
-                    </div>
-                    <div id="chart-tasks" class="position-relative" role="img" aria-label="Issue activity"></div>
-                    <style>
-                      :root {
-                        --chart-tasks-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-tasks-color-1: color-mix(in srgb, transparent, var(--tblr-lime) 100%);
-                        --chart-tasks-color-2: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Revenue by plan</h3>
-                      <p class="card-subtitle">Monthly revenue of each plan, January to June.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-orange">
-                        <span class="legend-dot"></span>
-                        Starter</span
-                      ><span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Pro</span
-                      ><span class="legend legend-green">
-                        <span class="legend-dot"></span>
-                        Enterprise</span
-                      >
-                    </div>
-                    <div id="chart-line" class="position-relative" role="img" aria-label="Revenue by plan"></div>
-                    <style>
-                      :root {
-                        --chart-line-color-0: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
-                        --chart-line-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-line-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Signups by channel</h3>
-                      <p class="card-subtitle">Monthly signups, dashed for paid and referral.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Organic</span
-                      ><span class="legend legend-orange">
-                        <span class="legend-dot"></span>
-                        Paid</span
-                      ><span class="legend legend-green">
-                        <span class="legend-dot"></span>
-                        Referral</span
-                      >
-                    </div>
-                    <div id="chart-line-stroke" class="position-relative" role="img" aria-label="Signups by channel"></div>
-                    <style>
-                      :root {
-                        --chart-line-stroke-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-line-stroke-color-1: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
-                        --chart-line-stroke-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">CPU load</h3>
-                      <p class="card-subtitle">CPU load of web servers and workers in one day.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Web servers</span
-                      ><span class="legend legend-green">
-                        <span class="legend-dot"></span>
-                        Workers</span
-                      >
-                    </div>
-                    <div id="chart-spline" class="position-relative" role="img" aria-label="CPU load"></div>
-                    <style>
-                      :root {
-                        --chart-spline-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-spline-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Average temperature</h3>
-                      <p class="card-subtitle">Monthly average temperature in Tokyo and London.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Tokyo</span
-                      ><span class="legend legend-green">
-                        <span class="legend-dot"></span>
-                        London</span
-                      >
-                    </div>
-                    <div id="chart-temperature" class="position-relative" role="img" aria-label="Average temperature"></div>
-                    <style>
-                      :root {
-                        --chart-temperature-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-temperature-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Running instances</h3>
-                      <p class="card-subtitle">Number of running instances during the day.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-stepline" class="position-relative" role="img" aria-label="Running instances"></div>
-                    <style>
-                      :root {
-                        --chart-stepline-color-0: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <h2 class="page-section-title">Area charts</h2>
-                <p class="page-section-description">Lines with a filled area, to stress volume or to show how parts add up to a total.</p>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Area chart</h3>
-                      <p class="card-subtitle">Tickets solved per day as a filled area.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-completion-tasks-3" class="position-relative" role="img" aria-label="Area chart"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-3-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                        --chart-completion-tasks-3-fill-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 16%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Two areas</h3>
-                      <p class="card-subtitle">Solved and reopened tickets as two overlapping areas.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Solved</span
-                      ><span class="legend legend-red">
-                        <span class="legend-dot"></span>
-                        Reopened</span
-                      >
-                    </div>
-                    <div id="chart-completion-tasks-10" class="position-relative" role="img" aria-label="Two areas"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-10-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                        --chart-completion-tasks-10-fill-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 16%);
-                        --chart-completion-tasks-10-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
-                        --chart-completion-tasks-10-fill-1: color-mix(in srgb, transparent, var(--tblr-red) 16%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Stacked areas</h3>
-                      <p class="card-subtitle">Solved and reopened tickets stacked on top of each other.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Solved</span
-                      ><span class="legend legend-red">
-                        <span class="legend-dot"></span>
-                        Reopened</span
-                      >
-                    </div>
-                    <div id="chart-completion-tasks-11" class="position-relative" role="img" aria-label="Stacked areas"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-11-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                        --chart-completion-tasks-11-fill-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 16%);
-                        --chart-completion-tasks-11-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
-                        --chart-completion-tasks-11-fill-1: color-mix(in srgb, transparent, var(--tblr-red) 16%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Sessions by device</h3>
-                      <p class="card-subtitle">Monthly sessions on mobile and desktop.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Mobile</span
-                      ><span class="legend legend-pink">
-                        <span class="legend-dot"></span>
-                        Desktop</span
-                      >
-                    </div>
-                    <div id="chart-area" class="position-relative" role="img" aria-label="Sessions by device"></div>
-                    <style>
-                      :root {
-                        --chart-area-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-area-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
-                        --chart-area-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
-                        --chart-area-fill-1: color-mix(in srgb, transparent, var(--tblr-pink) 16%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Bandwidth usage</h3>
-                      <p class="card-subtitle">Monthly egress and ingress traffic.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Egress</span
-                      ><span class="legend legend-pink">
-                        <span class="legend-dot"></span>
-                        Ingress</span
-                      >
-                    </div>
-                    <div id="chart-area-spline" class="position-relative" role="img" aria-label="Bandwidth usage"></div>
-                    <style>
-                      :root {
-                        --chart-area-spline-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-area-spline-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
-                        --chart-area-spline-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
-                        --chart-area-spline-fill-1: color-mix(in srgb, transparent, var(--tblr-pink) 16%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Storage by bucket</h3>
-                      <p class="card-subtitle">Storage used by media and backups, stacked.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Media</span
-                      ><span class="legend legend-pink">
-                        <span class="legend-dot"></span>
-                        Backups</span
-                      >
-                    </div>
-                    <div id="chart-area-spline-stacked" class="position-relative" role="img" aria-label="Storage by bucket"></div>
-                    <style>
-                      :root {
-                        --chart-area-spline-stacked-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-area-spline-stacked-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
-                        --chart-area-spline-stacked-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
-                        --chart-area-spline-stacked-fill-1: color-mix(in srgb, transparent, var(--tblr-pink) 16%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <h2 class="page-section-title">Bar charts</h2>
-                <p class="page-section-description">Comparison of separate categories, side by side or stacked.</p>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Bar chart</h3>
-                      <p class="card-subtitle">Tickets solved per day, last week.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-completion-tasks" class="position-relative" role="img" aria-label="Bar chart"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Horizontal bars</h3>
-                      <p class="card-subtitle">The same tickets as horizontal bars.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-completion-tasks-6" class="position-relative" role="img" aria-label="Horizontal bars"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-6-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Grouped bars</h3>
-                      <p class="card-subtitle">Solved and reopened tickets side by side.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Solved</span
-                      ><span class="legend legend-red">
-                        <span class="legend-dot"></span>
-                        Reopened</span
-                      >
-                    </div>
-                    <div id="chart-completion-tasks-8" class="position-relative" role="img" aria-label="Grouped bars"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-8-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                        --chart-completion-tasks-8-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Stacked bars</h3>
-                      <p class="card-subtitle">Solved and reopened tickets in one stacked bar per day.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Solved</span
-                      ><span class="legend legend-red">
-                        <span class="legend-dot"></span>
-                        Reopened</span
-                      >
-                    </div>
-                    <div id="chart-completion-tasks-9" class="position-relative" role="img" aria-label="Stacked bars"></div>
-                    <style>
-                      :root {
-                        --chart-completion-tasks-9-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                        --chart-completion-tasks-9-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Semantic colors</h3>
-                      <p class="card-subtitle">Cache status of requests per day, colored by meaning.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-cache-status" class="position-relative" role="img" aria-label="Semantic colors"></div>
-                    <style>
-                      :root {
-                        --chart-cache-status-color-0: color-mix(in srgb, transparent, var(--tblr-success) 100%);
-                        --chart-cache-status-color-1: color-mix(in srgb, transparent, var(--tblr-danger) 100%);
-                        --chart-cache-status-color-2: color-mix(in srgb, transparent, var(--tblr-info) 40%);
-                        --chart-cache-status-color-3: color-mix(in srgb, transparent, var(--tblr-warning) 100%);
-                        --chart-cache-status-color-4: color-mix(in srgb, transparent, var(--tblr-gray-300) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Signup funnel</h3>
-                      <p class="card-subtitle">Visitors left at each step from first visit to customer.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-funnel" class="position-relative" role="img" aria-label="Signup funnel"></div>
-                    <style>
-                      :root {
-                        --chart-funnel-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <h2 class="page-section-title">Circular charts</h2>
-                <p class="page-section-description">Parts of a whole and progress toward a goal, best with a few values.</p>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Traffic sources</h3>
-                      <p class="card-subtitle">Share of visits by source.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-demo-pie" class="position-relative" role="img" aria-label="Traffic sources"></div>
-                    <style>
-                      :root {
-                        --chart-demo-pie-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-demo-pie-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 80%);
-                        --chart-demo-pie-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 60%);
-                        --chart-demo-pie-color-3: color-mix(in srgb, transparent, var(--tblr-gray-300) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Email campaign</h3>
-                      <p class="card-subtitle">Delivery, open and click rates of one campaign.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-campaigns" class="position-relative" role="img" aria-label="Email campaign"></div>
-                    <style>
-                      :root {
-                        --chart-campaigns-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-campaigns-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 80%);
-                        --chart-campaigns-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 60%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Sales by region</h3>
-                      <p class="card-subtitle">Sales volume of each region.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-polar-area" class="position-relative" role="img" aria-label="Sales by region"></div>
-                    <style>
-                      :root {
-                        --chart-polar-area-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-polar-area-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 80%);
-                        --chart-polar-area-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 60%);
-                        --chart-polar-area-color-3: color-mix(in srgb, transparent, var(--tblr-primary) 40%);
-                        --chart-polar-area-color-4: color-mix(in srgb, transparent, var(--tblr-primary) 20%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <h2 class="page-section-title">Other charts</h2>
-                <p class="page-section-description">Mixed series, distributions, schedules and hierarchies.</p>
-              </div>
-              <div class="col-lg-8">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Spend and leads</h3>
-                      <p class="card-subtitle">Monthly spend as columns with leads and trials as lines.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Paid spend</span
-                      ><span class="legend legend-azure">
-                        <span class="legend-dot"></span>
-                        Content spend</span
-                      ><span class="legend legend-green">
-                        <span class="legend-dot"></span>
-                        Leads</span
-                      ><span class="legend legend-pink">
-                        <span class="legend-dot"></span>
-                        Trials</span
-                      >
-                    </div>
-                    <div id="chart-combination" class="position-relative" role="img" aria-label="Spend and leads"></div>
-                    <style>
-                      :root {
-                        --chart-combination-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-combination-color-1: color-mix(in srgb, transparent, var(--tblr-azure) 100%);
-                        --chart-combination-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                        --chart-combination-color-3: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Plan comparison</h3>
-                      <p class="card-subtitle">Pro and Enterprise plans rated in six areas.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-radar" class="position-relative" role="img" aria-label="Plan comparison"></div>
-                    <style>
-                      :root {
-                        --chart-radar-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-radar-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Page load time</h3>
-                      <p class="card-subtitle">Page load time samples on desktop and mobile.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Desktop</span
-                      ><span class="legend legend-pink">
-                        <span class="legend-dot"></span>
-                        Mobile</span
-                      >
-                    </div>
-                    <div id="chart-scatter" class="position-relative" role="img" aria-label="Page load time"></div>
-                    <style>
-                      :root {
-                        --chart-scatter-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-scatter-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-8">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Release roadmap</h3>
-                      <p class="card-subtitle">Planned duration of each release phase.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-timeline" class="position-relative" role="img" aria-label="Release roadmap"></div>
-                    <style>
-                      :root {
-                        --chart-timeline-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Campaign performance</h3>
-                      <p class="card-subtitle">Search and social campaigns on three metrics.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="legend-list justify-content-end mb-3">
-                      <span class="legend legend-primary">
-                        <span class="legend-dot"></span>
-                        Search</span
-                      ><span class="legend legend-green">
-                        <span class="legend-dot"></span>
-                        Social</span
-                      >
-                    </div>
-                    <div id="chart-bubble" class="position-relative" role="img" aria-label="Campaign performance"></div>
-                    <style>
-                      :root {
-                        --chart-bubble-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-bubble-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">Storage by folder</h3>
-                      <p class="card-subtitle">Disk space taken by each folder.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-treemap" class="position-relative" role="img" aria-label="Storage by folder"></div>
-                    <style>
-                      :root {
-                        --chart-treemap-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                      }
-                    </style>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                  <div class="card-header">
-                    <div>
-                      <h3 class="card-title">API response times</h3>
-                      <p class="card-subtitle">Spread of API response times in each month.</p>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="chart-box-plot" class="position-relative" role="img" aria-label="API response times"></div>
-                    <style>
-                      :root {
-                        --chart-box-plot-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-box-plot-box-upper: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
-                        --chart-box-plot-box-lower: color-mix(in srgb, transparent, var(--tblr-primary) 40%);
-                      }
-                    </style>
-                  </div>
+                <div class="col-auto ms-auto d-print-none">
+                  <a href="https://docs.tabler.io/ui/plugins/chart" target="_blank" rel="noopener" class="link-secondary">
+                    Docs
+                    <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
+                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                      <path d="M11 13l9 -9" />
+                      <path d="M15 4h5v5" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- END PAGE HEADER -->
+
+          <!-- BEGIN PAGE BODY -->
+          <div class="page-body">
+            <div class="container-xl">
+              <div class="row row-cards">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <h2 class="card-title">Active users</h2>
+                        <div class="ms-auto">
+                          <div class="dropdown">
+                            <button type="button" class="dropdown-toggle text-secondary border-0 bg-transparent p-0" id="active-users-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select time range for active users">Last 7 days</button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="active-users-dropdown">
+                              <button type="button" class="dropdown-item active" aria-current="true">Last 7 days</button>
+                              <button type="button" class="dropdown-item">Last 30 days</button>
+                              <button type="button" class="dropdown-item">Last 3 months</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col">
+                          <div id="chart-active-users-2" class="position-relative" role="img" aria-label="Active users"></div>
+                          <style>
+                            :root {
+                              --chart-active-users-2-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                              --chart-active-users-2-color-1: color-mix(in srgb, transparent, var(--tblr-azure) 100%);
+                              --chart-active-users-2-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                            }
+                          </style>
+                        </div>
+                        <div class="col-md-auto">
+                          <div class="divide-y divide-y-fill">
+                            <div class="px-3">
+                              <div class="text-secondary"><span class="status-dot bg-primary"></span> Mobile</div>
+                              <div class="h2">10,601</div>
+                            </div>
+                            <div class="px-3">
+                              <div class="text-secondary"><span class="status-dot bg-azure"></span> Desktop</div>
+                              <div class="h2">6,109</div>
+                            </div>
+                            <div class="px-3">
+                              <div class="text-secondary"><span class="status-dot bg-green"></span> Tablet</div>
+                              <div class="h2">2,260</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h2 class="card-title">Chart with legend</h2>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list legend-list-divided mb-3" id="legend-demo-list">
+                        <button type="button" data-series="Total visits" class="legend legend-lg legend-yellow">
+                          <span class="legend-dot"></span>
+                          Total visits<span class="legend-value"> 63.0k </span>
+                        </button>
+                        <button type="button" data-series="Unique visitors" class="legend legend-lg legend-green">
+                          <span class="legend-dot"></span>
+                          Unique visitors<span class="legend-value"> 43.0k </span>
+                        </button>
+                        <button type="button" data-series="New users" class="legend legend-lg legend-primary">
+                          <span class="legend-dot"></span>
+                          New users<span class="legend-value"> 13.5k </span>
+                        </button>
+                      </div>
+
+                      <div id="chart-legend-demo" class="position-relative" role="img" aria-label="Site traffic"></div>
+                      <style>
+                        :root {
+                          --chart-legend-demo-color-0: color-mix(in srgb, transparent, var(--tblr-yellow) 100%);
+                          --chart-legend-demo-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                          --chart-legend-demo-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <h2 class="card-title">Social referrals</h2>
+                        <div class="ms-auto">
+                          <div class="dropdown">
+                            <button type="button" class="dropdown-toggle text-secondary border-0 bg-transparent p-0" id="social-referrals-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select time range for sales data">Last 7 days</button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="social-referrals-dropdown">
+                              <button type="button" class="dropdown-item active" aria-current="true">Last 7 days</button>
+                              <button type="button" class="dropdown-item">Last 30 days</button>
+                              <button type="button" class="dropdown-item">Last 3 months</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="chart-social-referrals" class="position-relative" role="img" aria-label="Social referrals"></div>
+                      <style>
+                        :root {
+                          --chart-social-referrals-color-0: color-mix(in srgb, transparent, var(--tblr-facebook) 100%);
+                          --chart-social-referrals-color-1: color-mix(in srgb, transparent, var(--tblr-twitter) 100%);
+                          --chart-social-referrals-color-2: color-mix(in srgb, transparent, var(--tblr-dribbble) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h2 class="card-title">Sprint velocity</h2>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-tasks-overview" class="position-relative" role="img" aria-label="Story points completed per sprint"></div>
+                      <style>
+                        :root {
+                          --chart-tasks-overview-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <h2 class="page-section-title">Line charts</h2>
+                  <p class="page-section-description">Trends over time, where the change between points matters more than single values.</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Line chart</h3>
+                        <p class="card-subtitle">Tickets solved per day with a smooth curve, the default.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-completion-tasks-2" class="position-relative" role="img" aria-label="Line chart"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-2-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Straight line</h3>
+                        <p class="card-subtitle">The same tickets drawn with straight segments.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-completion-tasks-4" class="position-relative" role="img" aria-label="Straight line"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-4-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Stepped line</h3>
+                        <p class="card-subtitle">A stepped line for values that change in jumps.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-completion-tasks-5" class="position-relative" role="img" aria-label="Stepped line"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-5-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Data labels</h3>
+                        <p class="card-subtitle">Tickets solved per day, labeled with values.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-completion-tasks-7" class="position-relative" role="img" aria-label="Data labels"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-7-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Issue activity</h3>
+                        <p class="card-subtitle">Issues opened, closed and reopened per day over the last 17 days.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Opened</span
+                        ><span class="legend legend-lime">
+                          <span class="legend-dot"></span>
+                          Closed</span
+                        ><span class="legend legend-orange">
+                          <span class="legend-dot"></span>
+                          Reopened</span
+                        >
+                      </div>
+                      <div id="chart-tasks" class="position-relative" role="img" aria-label="Issue activity"></div>
+                      <style>
+                        :root {
+                          --chart-tasks-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-tasks-color-1: color-mix(in srgb, transparent, var(--tblr-lime) 100%);
+                          --chart-tasks-color-2: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Revenue by plan</h3>
+                        <p class="card-subtitle">Monthly revenue of each plan, January to June.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-orange">
+                          <span class="legend-dot"></span>
+                          Starter</span
+                        ><span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Pro</span
+                        ><span class="legend legend-green">
+                          <span class="legend-dot"></span>
+                          Enterprise</span
+                        >
+                      </div>
+                      <div id="chart-line" class="position-relative" role="img" aria-label="Revenue by plan"></div>
+                      <style>
+                        :root {
+                          --chart-line-color-0: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
+                          --chart-line-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-line-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Signups by channel</h3>
+                        <p class="card-subtitle">Monthly signups, dashed for paid and referral.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Organic</span
+                        ><span class="legend legend-orange">
+                          <span class="legend-dot"></span>
+                          Paid</span
+                        ><span class="legend legend-green">
+                          <span class="legend-dot"></span>
+                          Referral</span
+                        >
+                      </div>
+                      <div id="chart-line-stroke" class="position-relative" role="img" aria-label="Signups by channel"></div>
+                      <style>
+                        :root {
+                          --chart-line-stroke-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-line-stroke-color-1: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
+                          --chart-line-stroke-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">CPU load</h3>
+                        <p class="card-subtitle">CPU load of web servers and workers in one day.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Web servers</span
+                        ><span class="legend legend-green">
+                          <span class="legend-dot"></span>
+                          Workers</span
+                        >
+                      </div>
+                      <div id="chart-spline" class="position-relative" role="img" aria-label="CPU load"></div>
+                      <style>
+                        :root {
+                          --chart-spline-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-spline-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Average temperature</h3>
+                        <p class="card-subtitle">Monthly average temperature in Tokyo and London.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Tokyo</span
+                        ><span class="legend legend-green">
+                          <span class="legend-dot"></span>
+                          London</span
+                        >
+                      </div>
+                      <div id="chart-temperature" class="position-relative" role="img" aria-label="Average temperature"></div>
+                      <style>
+                        :root {
+                          --chart-temperature-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-temperature-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Running instances</h3>
+                        <p class="card-subtitle">Number of running instances during the day.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-stepline" class="position-relative" role="img" aria-label="Running instances"></div>
+                      <style>
+                        :root {
+                          --chart-stepline-color-0: color-mix(in srgb, transparent, var(--tblr-orange) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <h2 class="page-section-title">Area charts</h2>
+                  <p class="page-section-description">Lines with a filled area, to stress volume or to show how parts add up to a total.</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Area chart</h3>
+                        <p class="card-subtitle">Tickets solved per day as a filled area.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-completion-tasks-3" class="position-relative" role="img" aria-label="Area chart"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-3-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                          --chart-completion-tasks-3-fill-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 16%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Two areas</h3>
+                        <p class="card-subtitle">Solved and reopened tickets as two overlapping areas.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Solved</span
+                        ><span class="legend legend-red">
+                          <span class="legend-dot"></span>
+                          Reopened</span
+                        >
+                      </div>
+                      <div id="chart-completion-tasks-10" class="position-relative" role="img" aria-label="Two areas"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-10-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                          --chart-completion-tasks-10-fill-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 16%);
+                          --chart-completion-tasks-10-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
+                          --chart-completion-tasks-10-fill-1: color-mix(in srgb, transparent, var(--tblr-red) 16%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Stacked areas</h3>
+                        <p class="card-subtitle">Solved and reopened tickets stacked on top of each other.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Solved</span
+                        ><span class="legend legend-red">
+                          <span class="legend-dot"></span>
+                          Reopened</span
+                        >
+                      </div>
+                      <div id="chart-completion-tasks-11" class="position-relative" role="img" aria-label="Stacked areas"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-11-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                          --chart-completion-tasks-11-fill-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 16%);
+                          --chart-completion-tasks-11-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
+                          --chart-completion-tasks-11-fill-1: color-mix(in srgb, transparent, var(--tblr-red) 16%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Sessions by device</h3>
+                        <p class="card-subtitle">Monthly sessions on mobile and desktop.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Mobile</span
+                        ><span class="legend legend-pink">
+                          <span class="legend-dot"></span>
+                          Desktop</span
+                        >
+                      </div>
+                      <div id="chart-area" class="position-relative" role="img" aria-label="Sessions by device"></div>
+                      <style>
+                        :root {
+                          --chart-area-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-area-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
+                          --chart-area-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
+                          --chart-area-fill-1: color-mix(in srgb, transparent, var(--tblr-pink) 16%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Bandwidth usage</h3>
+                        <p class="card-subtitle">Monthly egress and ingress traffic.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Egress</span
+                        ><span class="legend legend-pink">
+                          <span class="legend-dot"></span>
+                          Ingress</span
+                        >
+                      </div>
+                      <div id="chart-area-spline" class="position-relative" role="img" aria-label="Bandwidth usage"></div>
+                      <style>
+                        :root {
+                          --chart-area-spline-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-area-spline-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
+                          --chart-area-spline-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
+                          --chart-area-spline-fill-1: color-mix(in srgb, transparent, var(--tblr-pink) 16%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Storage by bucket</h3>
+                        <p class="card-subtitle">Storage used by media and backups, stacked.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Media</span
+                        ><span class="legend legend-pink">
+                          <span class="legend-dot"></span>
+                          Backups</span
+                        >
+                      </div>
+                      <div id="chart-area-spline-stacked" class="position-relative" role="img" aria-label="Storage by bucket"></div>
+                      <style>
+                        :root {
+                          --chart-area-spline-stacked-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-area-spline-stacked-fill-0: color-mix(in srgb, transparent, var(--tblr-primary) 16%);
+                          --chart-area-spline-stacked-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
+                          --chart-area-spline-stacked-fill-1: color-mix(in srgb, transparent, var(--tblr-pink) 16%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <h2 class="page-section-title">Bar charts</h2>
+                  <p class="page-section-description">Comparison of separate categories, side by side or stacked.</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Bar chart</h3>
+                        <p class="card-subtitle">Tickets solved per day, last week.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-completion-tasks" class="position-relative" role="img" aria-label="Bar chart"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Horizontal bars</h3>
+                        <p class="card-subtitle">The same tickets as horizontal bars.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-completion-tasks-6" class="position-relative" role="img" aria-label="Horizontal bars"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-6-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Grouped bars</h3>
+                        <p class="card-subtitle">Solved and reopened tickets side by side.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Solved</span
+                        ><span class="legend legend-red">
+                          <span class="legend-dot"></span>
+                          Reopened</span
+                        >
+                      </div>
+                      <div id="chart-completion-tasks-8" class="position-relative" role="img" aria-label="Grouped bars"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-8-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                          --chart-completion-tasks-8-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Stacked bars</h3>
+                        <p class="card-subtitle">Solved and reopened tickets in one stacked bar per day.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Solved</span
+                        ><span class="legend legend-red">
+                          <span class="legend-dot"></span>
+                          Reopened</span
+                        >
+                      </div>
+                      <div id="chart-completion-tasks-9" class="position-relative" role="img" aria-label="Stacked bars"></div>
+                      <style>
+                        :root {
+                          --chart-completion-tasks-9-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                          --chart-completion-tasks-9-color-1: color-mix(in srgb, transparent, var(--tblr-red) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Semantic colors</h3>
+                        <p class="card-subtitle">Cache status of requests per day, colored by meaning.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-cache-status" class="position-relative" role="img" aria-label="Semantic colors"></div>
+                      <style>
+                        :root {
+                          --chart-cache-status-color-0: color-mix(in srgb, transparent, var(--tblr-success) 100%);
+                          --chart-cache-status-color-1: color-mix(in srgb, transparent, var(--tblr-danger) 100%);
+                          --chart-cache-status-color-2: color-mix(in srgb, transparent, var(--tblr-info) 40%);
+                          --chart-cache-status-color-3: color-mix(in srgb, transparent, var(--tblr-warning) 100%);
+                          --chart-cache-status-color-4: color-mix(in srgb, transparent, var(--tblr-gray-300) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Signup funnel</h3>
+                        <p class="card-subtitle">Visitors left at each step from first visit to customer.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-funnel" class="position-relative" role="img" aria-label="Signup funnel"></div>
+                      <style>
+                        :root {
+                          --chart-funnel-color-0: color-mix(in srgb, transparent, var(--tblr-chart-1) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <h2 class="page-section-title">Circular charts</h2>
+                  <p class="page-section-description">Parts of a whole and progress toward a goal, best with a few values.</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Traffic sources</h3>
+                        <p class="card-subtitle">Share of visits by source.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-demo-pie" class="position-relative" role="img" aria-label="Traffic sources"></div>
+                      <style>
+                        :root {
+                          --chart-demo-pie-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-demo-pie-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 80%);
+                          --chart-demo-pie-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 60%);
+                          --chart-demo-pie-color-3: color-mix(in srgb, transparent, var(--tblr-gray-300) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Email campaign</h3>
+                        <p class="card-subtitle">Delivery, open and click rates of one campaign.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-campaigns" class="position-relative" role="img" aria-label="Email campaign"></div>
+                      <style>
+                        :root {
+                          --chart-campaigns-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-campaigns-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 80%);
+                          --chart-campaigns-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 60%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Sales by region</h3>
+                        <p class="card-subtitle">Sales volume of each region.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-polar-area" class="position-relative" role="img" aria-label="Sales by region"></div>
+                      <style>
+                        :root {
+                          --chart-polar-area-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-polar-area-color-1: color-mix(in srgb, transparent, var(--tblr-primary) 80%);
+                          --chart-polar-area-color-2: color-mix(in srgb, transparent, var(--tblr-primary) 60%);
+                          --chart-polar-area-color-3: color-mix(in srgb, transparent, var(--tblr-primary) 40%);
+                          --chart-polar-area-color-4: color-mix(in srgb, transparent, var(--tblr-primary) 20%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <h2 class="page-section-title">Other charts</h2>
+                  <p class="page-section-description">Mixed series, distributions, schedules and hierarchies.</p>
+                </div>
+                <div class="col-lg-8">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Spend and leads</h3>
+                        <p class="card-subtitle">Monthly spend as columns with leads and trials as lines.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Paid spend</span
+                        ><span class="legend legend-azure">
+                          <span class="legend-dot"></span>
+                          Content spend</span
+                        ><span class="legend legend-green">
+                          <span class="legend-dot"></span>
+                          Leads</span
+                        ><span class="legend legend-pink">
+                          <span class="legend-dot"></span>
+                          Trials</span
+                        >
+                      </div>
+                      <div id="chart-combination" class="position-relative" role="img" aria-label="Spend and leads"></div>
+                      <style>
+                        :root {
+                          --chart-combination-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-combination-color-1: color-mix(in srgb, transparent, var(--tblr-azure) 100%);
+                          --chart-combination-color-2: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                          --chart-combination-color-3: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Plan comparison</h3>
+                        <p class="card-subtitle">Pro and Enterprise plans rated in six areas.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-radar" class="position-relative" role="img" aria-label="Plan comparison"></div>
+                      <style>
+                        :root {
+                          --chart-radar-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-radar-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Page load time</h3>
+                        <p class="card-subtitle">Page load time samples on desktop and mobile.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Desktop</span
+                        ><span class="legend legend-pink">
+                          <span class="legend-dot"></span>
+                          Mobile</span
+                        >
+                      </div>
+                      <div id="chart-scatter" class="position-relative" role="img" aria-label="Page load time"></div>
+                      <style>
+                        :root {
+                          --chart-scatter-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-scatter-color-1: color-mix(in srgb, transparent, var(--tblr-pink) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Release roadmap</h3>
+                        <p class="card-subtitle">Planned duration of each release phase.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-timeline" class="position-relative" role="img" aria-label="Release roadmap"></div>
+                      <style>
+                        :root {
+                          --chart-timeline-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Campaign performance</h3>
+                        <p class="card-subtitle">Search and social campaigns on three metrics.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="legend-list justify-content-end mb-3">
+                        <span class="legend legend-primary">
+                          <span class="legend-dot"></span>
+                          Search</span
+                        ><span class="legend legend-green">
+                          <span class="legend-dot"></span>
+                          Social</span
+                        >
+                      </div>
+                      <div id="chart-bubble" class="position-relative" role="img" aria-label="Campaign performance"></div>
+                      <style>
+                        :root {
+                          --chart-bubble-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-bubble-color-1: color-mix(in srgb, transparent, var(--tblr-green) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">Storage by folder</h3>
+                        <p class="card-subtitle">Disk space taken by each folder.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-treemap" class="position-relative" role="img" aria-label="Storage by folder"></div>
+                      <style>
+                        :root {
+                          --chart-treemap-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <div>
+                        <h3 class="card-title">API response times</h3>
+                        <p class="card-subtitle">Spread of API response times in each month.</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="chart-box-plot" class="position-relative" role="img" aria-label="API response times"></div>
+                      <style>
+                        :root {
+                          --chart-box-plot-color-0: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-box-plot-box-upper: color-mix(in srgb, transparent, var(--tblr-primary) 100%);
+                          --chart-box-plot-box-lower: color-mix(in srgb, transparent, var(--tblr-primary) 40%);
+                        }
+                      </style>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END PAGE BODY -->
         </main>
-        <!-- END PAGE BODY -->
 
         <!-- BEGIN FOOTER -->
         <!--  BEGIN FOOTER  -->
@@ -3174,7 +3176,7 @@
                     <a href="." class="link-secondary">Tabler</a>. All rights reserved.
                   </li>
                   <li class="list-inline-item">
-                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.0 </a>
+                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.1 </a>
                   </li>
                 </ul>
               </div>
@@ -4169,9 +4171,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4202,6 +4206,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4276,9 +4284,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4309,6 +4319,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4434,9 +4448,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4467,6 +4483,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4536,9 +4556,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4569,6 +4591,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4607,9 +4633,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4640,6 +4668,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4678,9 +4710,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4711,6 +4745,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4749,9 +4787,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4782,6 +4822,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4820,9 +4864,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4853,6 +4899,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4897,9 +4947,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -4930,6 +4982,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -4972,9 +5028,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5005,6 +5063,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5047,9 +5109,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5080,6 +5144,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5121,9 +5189,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5154,6 +5224,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5197,9 +5271,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5230,6 +5306,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5268,9 +5348,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5301,6 +5383,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5341,9 +5427,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5374,6 +5462,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5417,9 +5509,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5450,6 +5544,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5493,9 +5591,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5526,6 +5626,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5569,9 +5673,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5602,6 +5708,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5645,9 +5755,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5678,6 +5790,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5721,9 +5837,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5754,6 +5872,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5793,9 +5915,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5826,6 +5950,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5865,9 +5993,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5898,6 +6028,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -5940,9 +6074,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -5973,6 +6109,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6015,9 +6155,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6048,6 +6190,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6093,9 +6239,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6126,6 +6274,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6165,9 +6317,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6198,6 +6352,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6235,9 +6393,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6268,6 +6428,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6305,9 +6469,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6338,6 +6504,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6375,9 +6545,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6408,6 +6580,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6451,9 +6627,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6484,6 +6662,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6527,9 +6709,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6560,6 +6744,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6600,9 +6788,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6633,6 +6823,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6683,9 +6877,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6716,6 +6912,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6774,9 +6974,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6807,6 +7009,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6858,9 +7064,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6891,6 +7099,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }
@@ -6942,9 +7154,11 @@
 
         window.tabler_chart ??= {}
 
+        const isEmpty = (val) => val == null || Number.isNaN(val)
+
         const formatters = {
-          'thousands': (val) => val.toLocaleString('en-US'),
-          'suffix-k': (val) => val + 'K',
+          'thousands': (val) => (isEmpty(val) ? '' : val.toLocaleString('en-US')),
+          'suffix-k': (val) => (isEmpty(val) ? '' : val + 'K'),
         }
 
         // Heatmap and treemap shade each cell by computing off the literal base color in JS
@@ -6975,6 +7189,10 @@
         }
 
         function initChart() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            config.chart = { ...config.chart, animations: { enabled: false } }
+          }
+
           if (Object.hasOwn(formatters, xFormatter) && config.xaxis?.labels) {
             config.xaxis.labels.formatter = formatters[xFormatter]
           }

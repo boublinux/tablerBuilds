@@ -26,6 +26,7 @@ declare class Modal extends BaseComponent {
     _focustrap: FocusTrap;
     _isShown: boolean;
     _isTransitioning: boolean;
+    _returnFocusTarget: HTMLElement | SVGElement | null;
     _scrollBar: ScrollBarHelper;
     constructor(element: HTMLElement | string, config?: ComponentConfigInput);
     static get Default(): ComponentConfig;
@@ -40,7 +41,7 @@ declare class Modal extends BaseComponent {
     _initializeFocusTrap(): FocusTrap;
     _showElement(relatedTarget?: HTMLElement): void;
     _addEventListeners(): void;
-    _hideModal(): void;
+    _hideModal(returnFocusTarget: HTMLElement | SVGElement | null): void;
     _isAnimated(): boolean;
     _triggerBackdropTransition(): void;
     _adjustDialog(): void;

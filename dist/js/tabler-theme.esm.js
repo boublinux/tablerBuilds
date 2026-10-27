@@ -1,10 +1,10 @@
 /*!
-* Tabler v1.7.0 (https://tabler.io)
+* Tabler v1.7.1 (https://tabler.io)
 * Copyright 2018-2026 The Tabler Authors
 * Copyright 2018-2026 codecalm.net Paweł Kuna
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
 */
-//#region js/src/theme-config.ts
+// js/src/theme-config.ts
 /**
 * Every setting the theme switcher understands, with its default value. Each
 * key becomes a `data-bs-<key>` attribute on `<html>`, a `tabler-<key>`
@@ -26,8 +26,7 @@ var themeDefaults = {
 	"offcanvas-style": "default",
 	"sidebar": "default"
 };
-//#endregion
-//#region js/tabler-theme.ts
+// js/tabler-theme.ts
 /**
 * demo-theme is specifically loaded right after the body and not deferred
 * to ensure we switch to the chosen dark/light theme as fast as possible.
@@ -71,6 +70,5 @@ prefersDark.addEventListener("change", (event) => {
 		else document.documentElement.removeAttribute("data-bs-theme");
 	}
 });
-//#endregion
 
 //# sourceMappingURL=tabler-theme.esm.js.map

@@ -2184,144 +2184,148 @@
       <!-- END NAVBAR  -->
 
       <div class="page-wrapper">
-        <!-- BEGIN PAGE HEADER -->
+        <main id="content" class="d-flex flex-column flex-fill">
+          <!-- BEGIN PAGE HEADER -->
 
-        <div class="page-header d-print-none">
-          <div class="container-xl">
-            <div class="row g-2 align-items-center">
-              <div class="col">
-                <h1 class="page-title">Signatures</h1>
-              </div>
+          <div class="page-header d-print-none">
+            <div class="container-xl">
+              <div class="row g-2 align-items-center">
+                <div class="col">
+                  <h1 class="page-title">Signatures</h1>
+                </div>
 
-              <div class="col-auto ms-auto d-print-none">
-                <a href="https://docs.tabler.io/ui/plugins/signature" target="_blank" rel="noopener" class="link-secondary">
-                  Docs
-                  <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
-                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                    <path d="M11 13l9 -9" />
-                    <path d="M15 4h5v5" />
-                  </svg>
-                </a>
+                <div class="col-auto ms-auto d-print-none">
+                  <a href="https://docs.tabler.io/ui/plugins/signature" target="_blank" rel="noopener" class="link-secondary">
+                    Docs
+                    <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
+                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                      <path d="M11 13l9 -9" />
+                      <path d="M15 4h5v5" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- END PAGE HEADER -->
+          <!-- END PAGE HEADER -->
 
-        <!-- BEGIN PAGE BODY -->
-        <main id="content" class="page-body">
-          <div class="container-xl">
-            <div class="row row-cards">
-              <div class="col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Confirm transfer</h2>
-                    <p class="card-subtitle">Please confirm the transfer of funds by signing below.</p>
-                    <form>
-                      <div class="mb-3">
-                        <label class="form-label required" for="signature-first-name">
-                          First name
-                          <span class="visually-hidden"> (required)</span>
-                        </label>
+          <!-- BEGIN PAGE BODY -->
+          <div class="page-body">
+            <div class="container-xl">
+              <div class="row row-cards">
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Confirm transfer</h2>
+                      <p class="card-subtitle">Please confirm the transfer of funds by signing below.</p>
+                      <form>
+                        <div class="mb-3">
+                          <label class="form-label required" for="signature-first-name">
+                            First name
+                            <span class="visually-hidden"> (required)</span>
+                          </label>
 
-                        <input type="text" class="form-control" id="signature-first-name" name="first_name" />
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label required" for="signature-last-name">
-                          Last name
-                          <span class="visually-hidden"> (required)</span>
-                        </label>
+                          <input type="text" class="form-control" id="signature-first-name" name="first_name" />
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label required" for="signature-last-name">
+                            Last name
+                            <span class="visually-hidden"> (required)</span>
+                          </label>
 
-                        <input type="text" class="form-control" id="signature-last-name" name="last_name" />
-                      </div>
-                      <div class="mb-3">
-                        <div class="form-label required">Signature</div>
+                          <input type="text" class="form-control" id="signature-last-name" name="last_name" />
+                        </div>
+                        <div class="mb-3">
+                          <div class="form-label required">Signature</div>
 
-                        <div class="signature position-relative">
-                          <div class="position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon" id="signature-default-clear" title="Clear signature" aria-label="Clear signature" data-bs-toggle="tooltip">
-                              <!-- Download SVG icon from http://tabler.io/icons/icon/trash -->
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                                <path d="M4 7l16 0" />
-                                <path d="M10 11l0 6" />
-                                <path d="M14 11l0 6" />
-                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                              </svg>
-                            </button>
+                          <div class="signature position-relative">
+                            <div class="position-absolute top-0 end-0 p-2">
+                              <button type="button" class="btn btn-icon" id="signature-default-clear" title="Clear signature" aria-label="Clear signature" data-bs-toggle="tooltip">
+                                <!-- Download SVG icon from http://tabler.io/icons/icon/trash -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                  <path d="M4 7l16 0" />
+                                  <path d="M10 11l0 6" />
+                                  <path d="M14 11l0 6" />
+                                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                </svg>
+                              </button>
+                            </div>
+                            <canvas id="signature-default" width="400" height="400" class="signature-canvas"></canvas>
                           </div>
-                          <canvas id="signature-default" width="400" height="400" class="signature-canvas"></canvas>
+                        </div>
+                      </form>
+                      <div class="text-secondary fs-5">
+                        I agree that the signature and initials will be the electronic representation of my signature and initials for all purposes when I (or my agent) use them on documents, including legally binding contracts - just the same as a pen-and-paper signature or initial.
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="btn-list">
+                          <button type="button" class="btn">Cancel</button>
+                          <button type="button" class="btn btn-primary ms-auto">Confirm transfer</button>
                         </div>
                       </div>
-                    </form>
-                    <div class="text-secondary fs-5">I agree that the signature and initials will be the electronic representation of my signature and initials for all purposes when I (or my agent) use them on documents, including legally binding contracts - just the same as a pen-and-paper signature or initial.</div>
+                    </div>
+                  </div>
+                </div>
 
-                    <div class="mt-4">
-                      <div class="btn-list">
-                        <button type="button" class="btn">Cancel</button>
-                        <button type="button" class="btn btn-primary ms-auto">Confirm transfer</button>
+                <div class="col-lg-6">
+                  <div class="row row-cards">
+                    <div class="col-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h2 class="card-title">Advanced demo</h2>
+
+                          <div class="signature position-relative">
+                            <div class="position-absolute top-0 end-0 p-2">
+                              <button type="button" class="btn btn-icon" id="signature-advanced-clear" title="Clear signature" aria-label="Clear signature" data-bs-toggle="tooltip">
+                                <!-- Download SVG icon from http://tabler.io/icons/icon/trash -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
+                                  <path d="M4 7l16 0" />
+                                  <path d="M10 11l0 6" />
+                                  <path d="M14 11l0 6" />
+                                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                </svg>
+                              </button>
+                            </div>
+                            <canvas id="signature-advanced" width="400" height="400" class="signature-canvas"></canvas>
+                          </div>
+
+                          <div class="mt-4">
+                            <div class="row">
+                              <div class="col">
+                                <label class="form-label visually-hidden" for="signature-advanced-color"> Pen color </label>
+
+                                <input type="color" id="signature-advanced-color" class="w-100 form-control form-control-color" />
+                              </div>
+                              <div class="col">
+                                <button class="btn w-100" id="signature-advanced-svg">Download SVG</button>
+                              </div>
+                              <div class="col">
+                                <button class="btn w-100" id="signature-advanced-png">Download PNG</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-signature" class="btn">Open signature modal</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div class="col-lg-6">
-                <div class="row row-cards">
-                  <div class="col-12">
-                    <div class="card">
-                      <div class="card-body">
-                        <h2 class="card-title">Advanced demo</h2>
-
-                        <div class="signature position-relative">
-                          <div class="position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon" id="signature-advanced-clear" title="Clear signature" aria-label="Clear signature" data-bs-toggle="tooltip">
-                              <!-- Download SVG icon from http://tabler.io/icons/icon/trash -->
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon">
-                                <path d="M4 7l16 0" />
-                                <path d="M10 11l0 6" />
-                                <path d="M14 11l0 6" />
-                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                              </svg>
-                            </button>
-                          </div>
-                          <canvas id="signature-advanced" width="400" height="400" class="signature-canvas"></canvas>
-                        </div>
-
-                        <div class="mt-4">
-                          <div class="row">
-                            <div class="col">
-                              <label class="form-label visually-hidden" for="signature-advanced-color"> Pen color </label>
-
-                              <input type="color" id="signature-advanced-color" class="w-100 form-control form-control-color" />
-                            </div>
-                            <div class="col">
-                              <button class="btn w-100" id="signature-advanced-svg">Download SVG</button>
-                            </div>
-                            <div class="col">
-                              <button class="btn w-100" id="signature-advanced-png">Download PNG</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="card">
-                      <div class="card-body">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#modal-signature" class="btn">Open signature modal</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
+          <!-- END PAGE BODY -->
         </main>
-        <!-- END PAGE BODY -->
 
         <!-- BEGIN FOOTER -->
         <!--  BEGIN FOOTER  -->
@@ -2359,7 +2363,7 @@
                     <a href="." class="link-secondary">Tabler</a>. All rights reserved.
                   </li>
                   <li class="list-inline-item">
-                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.0 </a>
+                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.1 </a>
                   </li>
                 </ul>
               </div>
@@ -2377,7 +2381,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <h5 class="modal-title" id="modal-signature-save-title">Save your signature</h5>
+            <h2 class="modal-title" id="modal-signature-save-title">Save your signature</h2>
             <div class="signature position-relative">
               <div class="position-absolute top-0 end-0 p-2">
                 <button type="button" class="btn btn-icon" id="signature-modal-clear" title="Clear signature" aria-label="Clear signature" data-bs-toggle="tooltip">

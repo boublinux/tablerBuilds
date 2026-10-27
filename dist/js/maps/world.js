@@ -1,5 +1,5 @@
 /*!
-* Tabler v1.7.0 (https://tabler.io)
+* Tabler v1.7.1 (https://tabler.io)
 * Copyright 2018-2026 The Tabler Authors
 * Copyright 2018-2026 codecalm.net Paweł Kuna
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
@@ -8,7 +8,6 @@
 	typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.tablerVectorMaps = global.tablerVectorMaps || {}));
 })(this, function(exports) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-	//#endregion
 	exports.world = {
 		width: 1e3,
 		height: 489,

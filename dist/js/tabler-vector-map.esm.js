@@ -1,10 +1,10 @@
 /*!
-* Tabler v1.7.0 (https://tabler.io)
+* Tabler v1.7.1 (https://tabler.io)
 * Copyright 2018-2026 The Tabler Authors
 * Copyright 2018-2026 codecalm.net Paweł Kuna
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
 */
-//#region js/src/bootstrap/dom/data.ts
+// js/src/bootstrap/dom/data.ts
 /**
 * --------------------------------------------------------------------------
 * Bootstrap dom/data.ts
@@ -33,8 +33,7 @@ var Data = {
 		if (instanceMap.size === 0) elementMap.delete(element);
 	}
 };
-//#endregion
-//#region js/src/bootstrap/util/index.ts
+// js/src/bootstrap/util/index.ts
 var MILLISECONDS_MULTIPLIER = 1e3;
 var TRANSITION_END = "transitionend";
 var parseSelector = (selector) => {
@@ -114,8 +113,7 @@ var executeAfterTransition = (callback, transitionElement, waitForTransition = t
 		if (!called) triggerTransitionEnd(transitionElement);
 	}, emulatedDuration);
 };
-//#endregion
-//#region js/src/bootstrap/dom/event-handler.ts
+// js/src/bootstrap/dom/event-handler.ts
 /**
 * --------------------------------------------------------------------------
 * Bootstrap dom/event-handler.ts
@@ -325,8 +323,7 @@ function hydrateObj(obj, meta = {}) {
 	}
 	return obj;
 }
-//#endregion
-//#region js/src/bootstrap/dom/manipulator.ts
+// js/src/bootstrap/dom/manipulator.ts
 function normalizeData(value) {
 	if (value === "true") return true;
 	if (value === "false") return false;
@@ -371,8 +368,7 @@ var Manipulator = {
 		return null;
 	}
 };
-//#endregion
-//#region js/src/bootstrap/util/config.ts
+// js/src/bootstrap/util/config.ts
 /**
 * --------------------------------------------------------------------------
 * Bootstrap util/config.ts
@@ -417,8 +413,7 @@ var Config = class {
 		}
 	}
 };
-//#endregion
-//#region js/src/bootstrap/base-component.ts
+// js/src/bootstrap/base-component.ts
 /**
 * --------------------------------------------------------------------------
 * Bootstrap base-component.ts
@@ -473,8 +468,7 @@ var BaseComponent = class extends Config {
 		return `${name}${this.EVENT_KEY}`;
 	}
 };
-//#endregion
-//#region js/src/bootstrap/dom/selector-engine.ts
+// js/src/bootstrap/dom/selector-engine.ts
 /**
 * --------------------------------------------------------------------------
 * Bootstrap dom/selector-engine.ts
@@ -553,8 +547,7 @@ var SelectorEngine = {
 		return selector ? SelectorEngine.find(selector) : [];
 	}
 };
-//#endregion
-//#region js/src/bootstrap/util/component-functions.ts
+// js/src/bootstrap/util/component-functions.ts
 /**
 * Creates the component for every element that matches on page load. One
 * element with a broken config must not stop the rest of the bundle, so the
@@ -570,8 +563,9 @@ var initAll = (selector, Plugin, filter = null) => {
 		}
 	}
 };
-//#endregion
-//#region js/src/vector-map.ts
+// js/src/util/prefers-reduced-motion.ts
+var prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// js/src/vector-map.ts
 /**
 * --------------------------------------------------------------------------
 * Tabler vector-map.ts
@@ -721,7 +715,6 @@ var project = ({ projection }, lng, lat) => {
 };
 var round = (value) => Math.round(value * 10) / 10;
 var clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-var reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 /**
 * Class definition
 *
@@ -1013,7 +1006,7 @@ var VectorMap = class VectorMap extends BaseComponent {
 	}
 	_animateTo(target) {
 		cancelAnimationFrame(this._frame);
-		if (!this._map || reducedMotion()) {
+		if (!this._map || prefersReducedMotion()) {
 			this._setView(target);
 			return;
 		}
@@ -1246,7 +1239,6 @@ else {
 	document.addEventListener("DOMContentLoaded", init, { once: true });
 	window.addEventListener("load", init, { once: true });
 }
-//#endregion
 export { VectorMap };
 
 //# sourceMappingURL=tabler-vector-map.esm.js.map

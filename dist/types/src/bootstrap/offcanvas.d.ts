@@ -23,6 +23,7 @@ declare class Offcanvas extends BaseComponent {
     _isShown: boolean;
     _backdrop: Backdrop;
     _focustrap: FocusTrap;
+    _returnFocusTarget: HTMLElement | SVGElement | null;
     constructor(element: HTMLElement | string, config?: ComponentConfigInput);
     static get Default(): ComponentConfig;
     static get DefaultType(): Record<keyof ComponentConfig, string>;

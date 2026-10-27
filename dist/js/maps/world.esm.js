@@ -1,10 +1,10 @@
 /*!
-* Tabler v1.7.0 (https://tabler.io)
+* Tabler v1.7.1 (https://tabler.io)
 * Copyright 2018-2026 The Tabler Authors
 * Copyright 2018-2026 codecalm.net Paweł Kuna
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
 */
-//#region js/maps/world.ts
+// js/maps/world.ts
 var world = {
 	width: 1e3,
 	height: 489,
@@ -875,7 +875,6 @@ var world = {
 		}
 	}
 };
-//#endregion
 export { world };
 
 //# sourceMappingURL=world.esm.js.map

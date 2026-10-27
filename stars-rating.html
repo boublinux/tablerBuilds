@@ -2188,183 +2188,185 @@
       <!-- END NAVBAR  -->
 
       <div class="page-wrapper">
-        <!-- BEGIN PAGE HEADER -->
+        <main id="content" class="d-flex flex-column flex-fill">
+          <!-- BEGIN PAGE HEADER -->
 
-        <div class="page-header d-print-none">
-          <div class="container-xl">
-            <div class="row g-2 align-items-center">
-              <div class="col">
-                <h1 class="page-title">Star Ratings</h1>
+          <div class="page-header d-print-none">
+            <div class="container-xl">
+              <div class="row g-2 align-items-center">
+                <div class="col">
+                  <h1 class="page-title">Star Ratings</h1>
 
-                <div class="text-secondary mt-1">An interactive star rating built on the star-rating.js widget, backed by a hidden select for accessibility and forms.</div>
-              </div>
-
-              <div class="col-auto ms-auto d-print-none">
-                <a href="https://docs.tabler.io/ui/components/star-rating" target="_blank" rel="noopener" class="link-secondary">
-                  Docs
-                  <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
-                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                    <path d="M11 13l9 -9" />
-                    <path d="M15 4h5v5" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END PAGE HEADER -->
-
-        <!-- BEGIN PAGE BODY -->
-        <main id="content" class="page-body">
-          <div class="container-xl">
-            <div class="row row-cards mb-5">
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Basic</h2>
-                    <p class="card-subtitle">Click a star to set the value.</p>
-                    <select id="rating-basic" aria-label="Rating">
-                      <option value="">Select a rating</option>
-                      <option value="5">Excellent</option>
-                      <option value="4" selected>Very Good</option>
-                      <option value="3">Average</option>
-                      <option value="2">Poor</option>
-                      <option value="1">Terrible</option>
-                    </select>
-                  </div>
+                  <div class="text-secondary mt-1">An interactive star rating built on the star-rating.js widget, backed by a hidden select for accessibility and forms.</div>
                 </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Icons</h2>
-                    <p class="card-subtitle">Swap the star for any icon by passing a different SVG to the <code>stars</code> option.</p>
-                    <div class="space-y">
-                      <select id="rating-icon-star" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4" selected>Very Good</option>
-                        <option value="3">Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
 
-                      <select id="rating-icon-heart" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4" selected>Very Good</option>
-                        <option value="3">Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-
-                      <select id="rating-icon-ghost" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4" selected>Very Good</option>
-                        <option value="3">Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-
-                      <select id="rating-icon-circle" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4" selected>Very Good</option>
-                        <option value="3">Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Sizes</h2>
-                    <p class="card-subtitle">Match the rating to surrounding text with an <code>icon-sm</code> or <code>icon-lg</code> class on the star.</p>
-                    <div class="space-y">
-                      <select id="rating-size-sm" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4">Very Good</option>
-                        <option value="3" selected>Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-
-                      <select id="rating-size-md" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4">Very Good</option>
-                        <option value="3" selected>Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-
-                      <select id="rating-size-lg" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4">Very Good</option>
-                        <option value="3" selected>Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title">Colors</h2>
-                    <p class="card-subtitle">Color the star with a <code>text-*</code> class, any theme or extended color, to match the rest of the page.</p>
-                    <div class="space-y">
-                      <select id="rating-color-default" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4">Very Good</option>
-                        <option value="3" selected>Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-
-                      <select id="rating-color-primary" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4">Very Good</option>
-                        <option value="3" selected>Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-
-                      <select id="rating-color-red" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4">Very Good</option>
-                        <option value="3" selected>Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-
-                      <select id="rating-color-lime" aria-label="Rating">
-                        <option value="">Select a rating</option>
-                        <option value="5">Excellent</option>
-                        <option value="4">Very Good</option>
-                        <option value="3" selected>Average</option>
-                        <option value="2">Poor</option>
-                        <option value="1">Terrible</option>
-                      </select>
-                    </div>
-                  </div>
+                <div class="col-auto ms-auto d-print-none">
+                  <a href="https://docs.tabler.io/ui/components/star-rating" target="_blank" rel="noopener" class="link-secondary">
+                    Docs
+                    <!-- Download SVG icon from http://tabler.io/icons/icon/external-link -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-sm icon-inline">
+                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                      <path d="M11 13l9 -9" />
+                      <path d="M15 4h5v5" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- END PAGE HEADER -->
+
+          <!-- BEGIN PAGE BODY -->
+          <div class="page-body">
+            <div class="container-xl">
+              <div class="row row-cards mb-5">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Basic</h2>
+                      <p class="card-subtitle">Click a star to set the value.</p>
+                      <select id="rating-basic" aria-label="Rating">
+                        <option value="">Select a rating</option>
+                        <option value="5">Excellent</option>
+                        <option value="4" selected>Very Good</option>
+                        <option value="3">Average</option>
+                        <option value="2">Poor</option>
+                        <option value="1">Terrible</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Icons</h2>
+                      <p class="card-subtitle">Swap the star for any icon by passing a different SVG to the <code>stars</code> option.</p>
+                      <div class="space-y">
+                        <select id="rating-icon-star" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4" selected>Very Good</option>
+                          <option value="3">Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-icon-heart" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4" selected>Very Good</option>
+                          <option value="3">Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-icon-ghost" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4" selected>Very Good</option>
+                          <option value="3">Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-icon-circle" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4" selected>Very Good</option>
+                          <option value="3">Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Sizes</h2>
+                      <p class="card-subtitle">Match the rating to surrounding text with an <code>icon-sm</code> or <code>icon-lg</code> class on the star.</p>
+                      <div class="space-y">
+                        <select id="rating-size-sm" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3" selected>Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-size-md" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3" selected>Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-size-lg" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3" selected>Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Colors</h2>
+                      <p class="card-subtitle">Color the star with a <code>text-*</code> class, any theme or extended color, to match the rest of the page.</p>
+                      <div class="space-y">
+                        <select id="rating-color-default" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3" selected>Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-color-primary" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3" selected>Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-color-red" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3" selected>Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+
+                        <select id="rating-color-lime" aria-label="Rating">
+                          <option value="">Select a rating</option>
+                          <option value="5">Excellent</option>
+                          <option value="4">Very Good</option>
+                          <option value="3" selected>Average</option>
+                          <option value="2">Poor</option>
+                          <option value="1">Terrible</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END PAGE BODY -->
         </main>
-        <!-- END PAGE BODY -->
 
         <!-- BEGIN FOOTER -->
         <!--  BEGIN FOOTER  -->
@@ -2402,7 +2404,7 @@
                     <a href="." class="link-secondary">Tabler</a>. All rights reserved.
                   </li>
                   <li class="list-inline-item">
-                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.0 </a>
+                    <a href="./changelog.html" class="link-secondary" rel="noopener"> v1.7.1 </a>
                   </li>
                 </ul>
               </div>
